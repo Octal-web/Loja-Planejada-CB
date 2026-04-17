@@ -1,8 +1,6 @@
-import { Reveal } from "./Reveal";
-import { CustomLink } from "./CustomLink";
 
-import stepFirst from '../content/steps/step-project-1.png';
 import stepSecond from '../content/steps/step-price-2.png';
+import stepFirst from '../content/steps/step-project-1.png';
 import stepThird from '../content/steps/step-tv-3.png';
 import tvAward from '../site/img/tv-award.png';
 
@@ -30,22 +28,22 @@ const HomeAbout = () => {
 
     return (
         <section className="py-32">
-            <div className="container max-w-medium">
+            <div className="container max-w-md md:max-w-medium">
                 <div className="mb-20">
                     <div className="flex items-center mb-6">
                         <i className="h-1 bg-secondary w-20 mr-6" />
-                        <h4 className="font-tertiary text-3xl 2xl:text-[32px] font-bold uppercase">A promoção</h4>
+                        <h4 className="font-tertiary text-2xl lg:text-3xl 2xl:text-[32px] font-bold uppercase">A promoção</h4>
                     </div>
 
-                    <h2 className="font-secondary text-5xl xl:text-6xl 2xl:text-[70px] text-secondary font-semibold uppercase tracking-tight">Como funciona a<span className="text-primary"> Jogada Planejada</span></h2>
+                    <h2 className="font-secondary text-4xl lg:text-5xl xl:text-6xl 2xl:text-[70px] text-secondary font-semibold uppercase tracking-tight">Como funciona a<span className="text-primary"> Jogada Planejada</span></h2>
                 </div>
 
-                <div className="grid grid-cols-3 gap-6 mb-6">
+                <div className="grid md:grid-cols-3 gap-6 mb-6">
                     {steps.map((step) => (
-                        <div key={step.id} className="bg-primary px-12 pt-16 pb-14">
+                        <div key={step.id} className="bg-primary px-5 py-8 lg:px-12 lg:pt-16 lg:pb-14">
                             <img src={step.icon} alt={step.title.replace(/<br\s*\/?>/gi, ' ')} className="mb-8" />
-                            <h4 className="font-secondary text-secondary text-3xl 2xl:text-[34px] font-semibold uppercase tracking-tight mb-6" dangerouslySetInnerHTML={{ __html: step.title }} />
-                            <p className="text-white text-xl 2xl:text-[22px] leading-tight tracking-tight max-w-[330px]">{step.description}</p>
+                            <h4 className="font-secondary text-secondary text-2xl lg:text-3xl 2xl:text-[34px] font-semibold uppercase tracking-tight mb-6" dangerouslySetInnerHTML={{ __html: step.title }} />
+                            <p className="text-white text-lg lg:text-xl 2xl:text-[22px] leading-tight tracking-tight max-w-[330px]">{step.description}</p>
                         </div>
                     ))}
                 </div>
