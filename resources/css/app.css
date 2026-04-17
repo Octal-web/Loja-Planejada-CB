@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+form .store-select__control {
+    @apply rounded-none border-white border-opacity-100 bg-transparent p-2 text-xl font-normal outline-none transition hover:ring-0 !shadow-none disabled:cursor-default;
+}
+form .store-select__control--is-focused,
+form .store-select__hidden__control--is-focused {
+    @apply !border-white focus:border-white;
+}
+form .store-select__placeholder {
+    @apply text-white;
+}
+form .store-select__indicators {
+    @apply hidden;
+}
+form .store-select__menu {
+	@apply rounded-none mt-0;
+}
+form .store-select__option {
+    @apply text-sm xl:text-base;
+}
+form .store-select__indicator,
+form .store-select__single-value,
+form .store-select__input-container {
+    @apply text-white;
+}
+form .store-select__input:focus {
+	@apply ring-0;
+}
+form .store-select__option--is-focused {
+	@apply bg-primary bg-opacity-20;
+}
+form .store-select__option--is-selected {
+	@apply bg-primary bg-opacity-90;
+}
