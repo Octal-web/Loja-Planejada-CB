@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import HomeStoresSearch from "./HomeStoresSearch";
 import { CustomLink } from "./CustomLink";
+import HomeStoresSearch from "./HomeStoresSearch";
 
 const HomeStores = () => {
     const [stores, setStores] = useState([]);
@@ -12,15 +12,15 @@ const HomeStores = () => {
         <section className="bg-primary py-32">
             <div className="container max-w-medium">
                 <div className="flex flex-col items-center justify-center mb-10">
-                    <h4 className="font-tertiary text-white text-3xl 2xl:text-[32px] font-bold uppercase mb-6">
+                    <h4 className="font-tertiary text-white text-2xl lg:text-3xl 2xl:text-[32px] font-bold uppercase mb-6">
                         Onde comprar
                     </h4>
                     <i className="h-1 bg-secondary w-20" />
                 </div>
 
-                <h1 className="font-secondary text-6xl xl:text-7xl 2xl:text-[90px] 2xl:leading-[1.1] text-white text-center font-semibold uppercase tracking-tight mb-8">Lojas <span className="text-secondary">Participantes</span></h1>
+                <h1 className="font-secondary text-5xl lg:text-6xl xl:text-7xl 2xl:text-[90px] 2xl:leading-[1.1] text-white text-center font-semibold uppercase tracking-tight mb-8">Lojas <span className="text-secondary">Participantes</span></h1>
 
-                <p className="text-white text-xl 2xl:text-[22px] text-center leading-tight tracking-tight max-w-[580px] mx-auto">Encontre a loja Casa Brasileira mais próxima de você e fale com um de nossos especialistas.</p>
+                <p className="text-white text-lg lg:text-xl 2xl:text-[22px] text-center leading-tight tracking-tight max-w-[580px] mx-auto">Encontre a loja Casa Brasileira mais próxima de você e fale com um de nossos especialistas.</p>
 
                 <HomeStoresSearch setStores={setStores} isProcessing={isProcessing} setIsProcessing={setIsProcessing} hasSearched={hasSearched} setHasSearched={setHasSearched} />
                 
@@ -42,17 +42,17 @@ const HomeStores = () => {
                                 
                             </>
                         ) : (
-                            <p className={`text-white text-2xl 2xl:text-[32px] text-center leading-tight tracking-tight max-w-[880px] mx-auto -mt-4 mb-14 transition-all duration-100 ${isProcessing ? 'opacity-50' : 'opacity-100'}`}>Oops.. Não foram encontradas lojas correspondentes à sua pesquisa</p>
+                            <p className={`text-white text-xl lg:text-2xl 2xl:text-[32px] text-center leading-tight tracking-tight max-w-[880px] mx-auto -mt-4 mb-14 transition-all duration-100 ${isProcessing ? 'opacity-50' : 'opacity-100'}`}>Oops.. Não foram encontradas lojas correspondentes à sua pesquisa</p>
                         )}
                         
-                        <p className={`text-white text-xl 2xl:text-[22px] text-center leading-tight tracking-tight max-w-[690px] -mb-10 mx-auto transition-all duration-100 ${isProcessing ? 'opacity-50' : 'opacity-100'}`}>Não encontrou sua cidade? Entre em contato e veja todas as opções.</p>
+                        <p className={`text-white text-base lg:text-xl 2xl:text-[22px] text-center leading-tight tracking-tight max-w-[690px] -mb-10 mx-auto transition-all duration-100 ${isProcessing ? 'opacity-50' : 'opacity-100'}`}>Não encontrou sua cidade? Entre em contato e veja todas as opções.</p>
                     </div>
                 ) : ''}
 
                 <CustomLink
                     href={route('Home.index')}
                     to="#solicite-seu-projeto"
-                    className="flex gap-2 max-lg:block text-white lg:text-sm xl:text-base 2xl:text-lg tracking-tight bg-primary border-2 border-white fill-white rounded-full px-4 xl:px-10 py-3.5 font-semibold transition-all hover:bg-secondary hover:border-secondary hover:text-primary hover:fill-primary mt-20 mx-auto w-fit"
+                    className="flex gap-2 lg:max-lg:block text-white lg:text-sm xl:text-base 2xl:text-lg tracking-tight bg-primary border-2 border-white fill-white rounded-full px-4 xl:px-10 py-3.5 font-semibold transition-all hover:bg-secondary hover:border-secondary hover:text-primary hover:fill-primary mt-20 mx-auto w-fit"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-4" viewBox="0 0 15.35 13.36">
                         <path d="M8.67,13.36l-1.15-1.13,4.73-4.73H0v-1.64H12.25L7.52,1.15l1.15-1.15,6.68,6.68-6.68,6.68Z"/>
