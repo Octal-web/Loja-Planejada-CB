@@ -9,7 +9,7 @@ const HomeVideo = () => {
     return (
         <section className="bg-secondary pt-32">
             <div className="container max-w-md md:max-w-medium">
-                <div className="grid md:grid-cols-2 gap-10 lg:gap-32">
+                <div className="flex flex-col-reverse md:grid md:grid-cols-2 lg:gap-32">
                     <Reveal direction="left">
                         <VideoPlayer src={campaignVideo} poster={campaignPoster} classList={['object-cover']} />
                     </Reveal>
