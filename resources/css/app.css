@@ -36,3 +36,27 @@ form .store-select__option--is-focused {
 form .store-select__option--is-selected {
 	@apply bg-primary bg-opacity-90;
 }
+
+
+form .contact-select__control {
+    @apply min-h-12 2xl:min-h-16 px-5 py-1 text-white text-xl 2xl:text-[22px] ring-0 border-0 bg-[#654433] rounded-lg hover:ring-0 transition-all duration-200 focus:border-primary focus:ring-0 focus:shadow-md;
+}
+form .contact-select__placeholder {
+    @apply text-white opacity-20;
+}
+form .contact-select__indicator-separator,
+form .contact-select__hidden__indicator-separator {
+    @apply hidden;
+}
+form .contact-select__option {
+    @apply text-lg;
+}
+form .contact-select__multi-value {
+    @apply bg-primary bg-opacity-60 text-white rounded-xl px-2 py-1.5;
+}
+form .contact-select__multi-value__label {
+    @apply text-white;
+}
+form .contact-select__indicator svg {
+    @apply fill-white;
+}
