@@ -7,6 +7,7 @@ import { CookieModal } from '@/Components/CookieModal';
 import { CustomLink } from '@/Components/CustomLink'; 
 
 import logo from '../site/img/logo.png';
+import octalLogo from '../site/img/octalweb-logo.png';
 
 const DefaultLayout = ({ children }) => {
     const [isVisible, setIsVisible] = useState(true);
@@ -229,45 +230,66 @@ const DefaultLayout = ({ children }) => {
             <footer className="relative bg-[#31231C]">
                 <div className="container max-w-large">
                     <div className="pb-10">
-                        <img src={`/cashback/site/img/logo.png`} className="w-2/6 sm:w-40 xl:w-36 2xl:w-44 mx-auto -mb-20 -translate-y-1/2" />
+                        <img src={logo} className="w-2/6 sm:w-40 xl:w-36 2xl:w-44 mx-auto -mb-20 -translate-y-1/2" />
 
                         <nav className="relative border-b border-white border-opacity-30 pb-5">
-                            <ul className="flex max-lg:flex-wrap justify-evenly gap-y-4 gap-x-4 md:gap-x-14 lg:gap-10 mt-14 max-w-7xl mx-auto">
+                            <ul className="flex max-lg:flex-wrap justify-evenly gap-y-4 gap-x-4 md:gap-x-14 lg:gap-10 mt-14 max-w-6xl mx-auto">
+                                {menuItems.map((item, index) => (
+                                    <li key={index}>
+                                        {item.external ? (
+                                            <a href={item.route} target="_blank" className="text-white text-sm font-medium leading-none transition-all opacity-70 hover:opacity-100">
+                                                {item.name}
+                                            </a>
+                                        ) : (
+                                            <CustomLink href={route(item.route)} to={item.to} className="text-white text-sm font-medium leading-none transition-all opacity-70 hover:opacity-100">
+                                                {item.name}
+                                            </CustomLink>
+                                        )}
+                                    </li>
+                                ))}
+                                
                                 <li>
-                                    <CustomLink href={route('Home.index')} to="#como-funciona" className="text-white text-sm font-medium leading-none transition-all opacity-70 hover:opacity-100">Como Funciona</CustomLink>
-                                </li>
-
-                                <li>
-                                    <CustomLink href={route('Home.index')} to="#sobre-cashback" className="text-white text-sm font-medium leading-none transition-all opacity-70 hover:opacity-100">Sobre o Cashback</CustomLink>
-                                </li>
-
-                                <li>
-                                    <CustomLink href={route('Home.index')} to="#perks" className="text-white text-sm font-medium leading-none transition-all opacity-70 hover:opacity-100">Inspiração</CustomLink>
-                                </li>
-
-                                <li>
-                                    <CustomLink href={route('Home.index')} to="#inspiration" className="text-white text-sm font-medium leading-none transition-all opacity-70 hover:opacity-100">Lojas Participantes</CustomLink>
-                                </li>
-
-                                <li>
-                                    <CustomLink href={route('Regulamento.index')} to="" className="text-white text-sm font-medium leading-none transition-all opacity-70 hover:opacity-100">Regulamento</CustomLink>
-                                </li>
-
-                                <li>
-                                    <a href="https://casabrasileiraplanejados.com.br/solicite-seu-projeto" target="_blank" className="text-white text-sm font-medium leading-none transition-all opacity-70 hover:opacity-100">Solicite Seu Projeto</a>
+                                    <CustomLink href={route('Home.index')} to="#solicite-seu-projeto" className="text-white text-sm font-medium leading-none transition-all opacity-70 hover:opacity-100">Como Funciona</CustomLink>
                                 </li>
                             </ul>
                         </nav>
 
-                        {/*<p className="text-[10px] sm:text-xs text-white text-center opacity-70 mx-auto mt-12 max-w-7xl">
+                        <p className="text-[10px] sm:text-xs text-white text-center opacity-70 mx-auto mt-12 max-w-4xl">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
                         </p>
 
-                        <p className="text-sm text-white text-center font-bold opacity-70 pt-4">Promoção valida até: xx/xx/xxxx</p> */}
+                        <p className="text-sm text-white text-center font-bold opacity-70 pt-4">Promoção valida até: xx/xx/xxxx</p>
 
                         <ul className="flex justify-center gap-3 mt-8">
-                            <li><a href="https://www.facebook.com/casabrasileiraoficial" className="block text-[0]" target="_blank">facebook<img src={`/cashback/site/img/facebook-icon.png`} /></a></li>
-                            <li><a href="https://www.instagram.com/casabrasileiraoficial" className="block text-[0]" target="_blank">instagram<img src={`/cashback/site/img/instagram-icon.png`} /></a></li>
+                            <li>
+                                <a href="https://www.facebook.com/casabrasileiraoficial" className="block text-[0] transition-all opacity-100 hover:opacity-70" target="_blank">
+                                    facebook
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24.377" height="24.377" viewBox="0 0 24.377 24.377">
+                                        <circle cx="11.884" cy="11.884" r="11.384" fill="none" className="stroke-secondary" stroke-width="1" />
+                                        <path d="M7.623,6.759l.334-2.175H5.87V3.173A1.087,1.087,0,0,1,7.1,2h.949V.147A11.568,11.568,0,0,0,6.361,0,2.655,2.655,0,0,0,3.52,2.927V4.584H1.609V6.759H3.52v5.257H5.87V6.759Z" transform="translate(7.168 5.669)" className="fill-secondary" />
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.instagram.com/casabrasileiraoficial" className="block text-[0] transition-all opacity-100 hover:opacity-70" target="_blank">
+                                    instagram
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24.377" height="24.377" viewBox="0 0 24.377 24.377">
+                                        <circle cx="11.884" cy="11.884" r="11.384" fill="none" className="stroke-secondary" stroke-width="1" />
+                                        <path d="M5.411,4.875A2.776,2.776,0,1,0,8.186,7.651,2.771,2.771,0,0,0,5.411,4.875Zm0,4.581a1.8,1.8,0,1,1,1.8-1.8A1.808,1.808,0,0,1,5.411,9.456ZM8.947,4.762A.647.647,0,1,1,8.3,4.114.646.646,0,0,1,8.947,4.762Zm1.838.657A3.2,3.2,0,0,0,9.911,3.15a3.225,3.225,0,0,0-2.269-.875c-.894-.051-3.573-.051-4.467,0a3.221,3.221,0,0,0-2.269.872A3.215,3.215,0,0,0,.033,5.416c-.051.894-.051,3.573,0,4.467a3.2,3.2,0,0,0,.875,2.269,3.229,3.229,0,0,0,2.269.875c.894.051,3.573.051,4.467,0a3.2,3.2,0,0,0,2.269-.875,3.225,3.225,0,0,0,.875-2.269C10.837,8.989,10.837,6.313,10.786,5.419ZM9.631,10.842A1.827,1.827,0,0,1,8.6,11.872a11.932,11.932,0,0,1-3.191.217,12.025,12.025,0,0,1-3.191-.217A1.827,1.827,0,0,1,1.19,10.842,11.932,11.932,0,0,1,.973,7.651,12.025,12.025,0,0,1,1.19,4.46,1.827,1.827,0,0,1,2.219,3.431a11.932,11.932,0,0,1,3.191-.217A12.025,12.025,0,0,1,8.6,3.431,1.827,1.827,0,0,1,9.631,4.46a11.932,11.932,0,0,1,.217,3.191A11.925,11.925,0,0,1,9.631,10.842Z" transform="translate(7.16 4.62)" className="fill-secondary" />
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.youtube.com/@CasaBrasileiraPlanejados" className="block text-[0] transition-all opacity-100 hover:opacity-70" target="_blank">
+                                    youtube
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24.377" height="24.377" viewBox="0 0 24.377 24.377">
+                                        <circle cx="11.884" cy="11.884" r="11.384" fill="none" className="stroke-secondary" stroke-width="1" />
+                                        <path d="M5.173.017c1.5-.033,3-.006,4.495.057,1.944.082,3.6-.161,3.848,2.268A20.716,20.716,0,0,1,13.4,7.9c-.362,1.624-1.767,1.535-3.126,1.612a60.992,60.992,0,0,1-6.957,0C2.4,9.46,1.031,9.507.48,8.617-.128,7.635,0,4.99.038,3.821.083,2.554-.06.813,1.407.318A16.3,16.3,0,0,1,5.173.017ZM5.449,2.8V6.826l3.429-2L5.449,2.8Z" transform="translate(5 7)" className="fill-secondary" />
+                                    </svg>
+                                </a>
+                            </li>
                         </ul>   
                     </div>
                 </div>
@@ -282,7 +304,7 @@ const DefaultLayout = ({ children }) => {
 
                             <div className="flex items-center ml-auto max-md:mr-auto gap-4">
                                 <span className="text-white text-xs opacity-70">Desenvolvido por: </span>
-                                <img src={`/cashback/site/img/8poroito-logo.png`} className="opacity-50" />
+                                <img src={octalLogo} className="opacity-50" />
                             </div>
                         </div>
                     </div>
