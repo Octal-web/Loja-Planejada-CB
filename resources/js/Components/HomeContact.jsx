@@ -1,5 +1,6 @@
 import CirclePath from "./CirclePath";
 import { ContactForm } from "./ContactForm";
+import CornerField from "./CornerField";
 import DrawPath from "./DrawPath";
 import MarkPath from "./MarkPath";
 
@@ -13,11 +14,13 @@ const HomeContact = () => {
     return (
         <section className="relative pt-32">
             <div className="absolute left-0 top-0">
-                <MarkPath className="absolute top-0 left-20 -translate-y-1/2 w-[81px]" />
-                <CirclePath className="absolute top-20 -translate-x-1/2 w-[81px]" />
+                <MarkPath className="absolute top-0 left-16 -translate-y-1/2 w-[81px]" fillClass="fill-secondary" delay={1} />
+                <CirclePath className="absolute top-16 -translate-x-1/2 w-[81px]" fillClass="fill-secondary"delay={1} />
             </div>
 
             <div className="relative container max-w-medium">
+                <CornerField className="-top-8 right-6 w-30 z-[1] fill-secondary" />
+
                 <div className="grid grid-cols-2">
                     <div>
                         <div className="flex items-center my-6">

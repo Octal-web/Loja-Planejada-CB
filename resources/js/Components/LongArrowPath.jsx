@@ -4,12 +4,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-const CirclePath = ({ className, fillClass = "fill-secondary", delay = 1 }) => {
+const LongArrowPath = ({ className, fillClass = "fill-secondary", delay = 1 }) => {
     const pathRef = useRef();
     const containerRef = useRef(null);
 
     const id = useId();
-    const maskId = `circle-mask-${id}`;
+    const maskId = `long-arrow-mask-${id}`;
 
     useEffect(() => {
         const path = pathRef.current;
@@ -25,31 +25,31 @@ const CirclePath = ({ className, fillClass = "fill-secondary", delay = 1 }) => {
 
         gsap.to(path, {
             strokeDashoffset: 0,
-            duration: 0.4,
+            duration: 0.5,
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 80%",
                 toggleActions: "play none none none",
             },
             ease: "linear",
-            delay: delay  * 0.6,
+            delay: delay * 0.6,
         });
 
     }, []);
 
     return (
         <div ref={containerRef} className={`${className} absolute`}>
-            <svg viewBox="0 0 81.2 81.3">
+            <svg viewBox="0 0 685.6 82.2">
                 <defs>
                     <mask id={maskId}>
-                        <path ref={pathRef} d="M40.6,4.4c-20,0-36.3,16.2-36.3,36.3s16.2,36.3,36.3,36.3s36.3-16.2,36.3-36.3S60.6,4.4,40.6,4.4" fill="none" stroke="white" strokeWidth="10" />
+                        <path ref={pathRef} d="M0,51.1c183-17.5,668.6-9.4,668.6-9.4l-53.7-27.4l4.2-13.5l59.6,42.4l-62.3,38.5" fill="none" stroke="white" strokeWidth="14" strokeLinecap="round" strokeLinejoin="round" />
                     </mask>
                 </defs>
 
-                <path d="M26.9,2.4c22.4-7.9,45,4.4,51.9,24.1c7.6,21.8-2.9,45.4-25.3,52.7 c-19.9,6.5-42.6-2.6-50.8-23.7C-4.8,35.9,3.4,10.7,26.9,2.4 M34.7,10.4C15.7,14.3,6.5,32.8,10.6,48c4.3,16.2,20.1,26.1,35.5,23 c17-3.3,28。2-19。7,24。8-36。4C67。8,19。3,52。8,6。7,34。7,10。4" className={fillClass} mask={`url(#${maskId})`} />
+                <path d="M618.7-0.4c7.3,21.7,30.9,21.3,43.3,38.2C441.4,31.4,224.4,33.7,5.9,46c-1.7,0.1-4.9,3.1-5.7,4.5 c-0.8,1.4,1.8,5.4,6,5.2c217.2-11.9,439.8-14.7,657-7.8c1.9,2.2-63.3,35.2-44.8,33.8 c8.4-0.6,56.7-30.1,66.3-38。7l0,0C659。9,24。7,642。3,11。8,618。7-0。4z" className={fillClass} mask={`url(#${maskId})`} />
             </svg>
         </div>
     );
 };
 
-export default CirclePath;
+export default LongArrowPath;

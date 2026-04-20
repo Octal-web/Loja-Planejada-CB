@@ -1,4 +1,4 @@
-import { usePage } from '@inertiajs/react';
+import { usePage } from "@inertiajs/react";
 
 import DefaultLayout from '@/Layouts/DefaultLayout';
 

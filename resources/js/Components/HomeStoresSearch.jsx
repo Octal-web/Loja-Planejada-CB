@@ -65,10 +65,6 @@ const HomeStoresSearch = ({ setStores, isProcessing, setIsProcessing, hasSearche
         
         setIsProcessing(true);
 
-        if (!hasSearched) {
-            setHasSearched(true);
-        }
-
         const payload = { id: selectedOption.value, type: selectedOption.type };
         try {
             const { data } = await axios.post(route('Lojas.carregar'), payload);
@@ -78,6 +74,10 @@ const HomeStoresSearch = ({ setStores, isProcessing, setIsProcessing, hasSearche
             console.log(error);
         } finally {
             setIsProcessing(false);
+            
+            if (!hasSearched) {
+                setHasSearched(true);
+            }
         }
     };
     

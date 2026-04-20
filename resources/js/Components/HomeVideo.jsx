@@ -1,15 +1,27 @@
 import { CustomLink } from "./CustomLink";
 import { Reveal } from "./Reveal";
 import { VideoPlayer } from "./VideoPlayer";
+import { CustomLink } from "./CustomLink";
+import MarkPath from "./MarkPath";
+import CirclePath from "./CirclePath";
+import ShortArrowPath from "./ShortArrowPath";
 
 import campaignPoster from '../content/display/campaign-poster.jpg';
 import campaignVideo from '../content/video/campaign-video.mp4';
 
 const HomeVideo = () => {
     return (
-        <section className="bg-secondary pt-32">
-            <div className="container max-w-md md:max-w-medium">
-                <div className="flex flex-col-reverse md:grid md:grid-cols-2 lg:gap-32">
+        <section className="relative bg-secondary pt-32">
+            <MarkPath className="absolute left-24 top-[45%] w-[81px]" fillClass="fill-primary" />
+
+            <div className="absolute -left-2 bottom-64 -rotate-[92deg]">
+                <MarkPath className="absolute right-72 -translate-y-1/2 rotate-[7deg] w-[81px]" fillClass="fill-primary" delay={1} />
+                <CirclePath className="absolute right-48 top-20 -translate-x-1/2 w-[81px]" fillClass="fill-primary" delay={0.5} />
+                <ShortArrowPath className="absolute -top-4 -right-4 translate-x-1/2 rotate-[160deg] w-[417px]" fillClass="fill-primary" delay={0.5} />
+            </div>
+
+            <div className="container max-w-medium">
+                <div className="grid grid-cols-2 gap-32">
                     <Reveal direction="left">
                         <VideoPlayer src={campaignVideo} poster={campaignPoster} classList={['object-cover']} />
                     </Reveal>
