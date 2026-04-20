@@ -5,6 +5,7 @@ import stepFirst from '../content/steps/step-project-1.png';
 import stepSecond from '../content/steps/step-price-2.png';
 import stepThird from '../content/steps/step-tv-3.png';
 import tvAward from '../site/img/tv-award.png';
+import CornerField from "./CornerField";
 
 const HomeAbout = () => {
     const steps = [
@@ -30,7 +31,10 @@ const HomeAbout = () => {
 
     return (
         <section className="py-32">
-            <div className="container max-w-medium">
+            <div className="relative container max-w-medium">
+
+                <CornerField className="top-0 right-0 w-30 fill-secondary" />
+
                 <div className="mb-20">
                     <div className="flex items-center mb-6">
                         <i className="h-1 bg-secondary w-20 mr-6" />

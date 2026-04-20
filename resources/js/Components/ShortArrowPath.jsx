@@ -4,18 +4,16 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import drawDetail from '../site/img/draw-detail.png';
-
-const DrawPath = ({ className }) => {
+const ShortArrowPath = ({ className, fillClass = "fill-secondary", delay = 1 }) => {
     const pathRef = useRef();
-    const containerRef = useRef();
+    const containerRef = useRef(null);
+    
     const id = useId();
-
-    const maskId = `draw-mask-${id}`;
+    const maskId = `short-arrow-mask-${id}`;
 
     useEffect(() => {
         const path = pathRef.current;
-        
+
         if (!path) return;
 
         const length = path.getTotalLength();
@@ -31,26 +29,27 @@ const DrawPath = ({ className }) => {
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 80%",
+                toggleActions: "play none none none",
             },
             ease: "linear",
-            delay: 0.6,
+            delay: delay * 0.6,
         });
 
     }, []);
 
     return (
-        <div className={`${className} absolute scale-125`}>
-            <svg viewBox="0 0 710.719 139.086">
+        <div ref={containerRef} className={`${className} absolute`}>
+            <svg viewBox="0 0 445.3 82.1">
                 <defs>
                     <mask id={maskId}>
-                    <path ref={pathRef} fill="none" stroke="white" strokeWidth="30" d="M710.7,65.2c0,0-158.6-58.4-398.1-49s-301,38.6-301,56.3 s103.3,62.6,330.3,61s339.1-28.2,339.1-47S565.6,3.6,304.2,6.2s-263.5,13-263.5,13" />
+                        <path ref={pathRef} d="M0.1 40.9 L425.2 40.9 L371.5 13.5 L379.1 3 L437.2 41.1 L379.7 82" fill="none" stroke="white" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" />
                     </mask>
                 </defs>
 
-                <image href={drawDetail} width="710.719" height="139.086" mask={`url(#${maskId})`} />
+                <path d="M381,0l-3.7,6.1c14.2,9.4,30,19.5,43.5,30.6l-412,0.2c-5.8,0-7.8,2.9-8.6,4.1c-0.8,1.2,4.3,5.8,6.3,5.8 l414.7,0.1c-12.6,14.2-39.9,22.1-44,33.8c-0.4,1.3,5.3,1.9,6.7,1l61.5-39.9L381,0z" className={fillClass} mask={`url(#${maskId})`} />
             </svg>
         </div>
     );
 };
 
-export default DrawPath;
+export default ShortArrowPath;

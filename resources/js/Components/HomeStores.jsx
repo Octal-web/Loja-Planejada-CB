@@ -2,6 +2,9 @@ import { useState } from "react";
 
 import HomeStoresSearch from "./HomeStoresSearch";
 import { CustomLink } from "./CustomLink";
+import MarkPath from "./MarkPath";
+import ShortArrowPath from "./ShortArrowPath";
+import CirclePath from "./CirclePath";
 
 const HomeStores = () => {
     const [stores, setStores] = useState([]);
@@ -9,7 +12,13 @@ const HomeStores = () => {
     const [hasSearched, setHasSearched] = useState(false);
     
     return (
-        <section className="bg-primary py-32">
+        <section className="relative bg-primary py-32">
+            <div className="absolute right-0 top-0">
+                <MarkPath className="absolute right-72 -translate-y-1/2 rotate-[7deg] w-[81px]" fillClass="fill-secondary" />
+                <CirclePath className="absolute right-48 top-20 -translate-x-1/2 w-[81px]" fillClass="fill-secondary" delay={1.5} />
+                <ShortArrowPath className="absolute -top-4 -right-4 translate-x-1/2 rotate-[160deg] w-[417px]" fillClass="fill-secondary" delay={1} />
+            </div>
+
             <div className="container max-w-medium">
                 <div className="flex flex-col items-center justify-center mb-10">
                     <h4 className="font-tertiary text-white text-3xl 2xl:text-[32px] font-bold uppercase mb-6">
@@ -59,6 +68,11 @@ const HomeStores = () => {
                     </svg>
                     Falar com a loja mais próxima
                 </CustomLink>
+            </div>
+            
+            <div className="absolute left-0 bottom-0">
+                <MarkPath className="absolute bottom-28 left-[25em] w-[81px]" fillClass="fill-secondary" />
+                <ShortArrowPath className="absolute bottom-52 -left-30 rotate-[18deg] w-[417px]" fillClass="fill-secondary" />
             </div>
         </section>
     );

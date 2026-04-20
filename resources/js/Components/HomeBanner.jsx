@@ -5,10 +5,12 @@ import { Reveal } from './Reveal';
 import CornerField from './CornerField';
 import DrawPath from './DrawPath';
 import { CustomLink } from './CustomLink';
+import HomeFieldPaths from './HomeFieldPaths';
 
 import promoLogo from '../content/display/promo-logo.png';
 import bannerBg from '../content/display/home-banner.jpg';
 import promoAward from '../content/display/promo-award.png';
+import StarsColumn from './StarsColumn';
 
 const HomeBanner = () => {
     const fieldRef = useRef(null);
@@ -69,11 +71,13 @@ const HomeBanner = () => {
     }, []);
 
     return (
-        <section className="relative bg-primary [perspective:1000px]">
+        <section className="relative bg-primary [perspective:1000px] overflow-hidden">
             <div
                 className="absolute inset-0 bg-[length:auto_100%] lg:bg-[length:auto_130%] bg-[60%_center] lg:bg-center opacity-50"
                 style={{ backgroundImage: `url(${bannerBg})` }}
             />
+
+            <HomeFieldPaths />
 
             <div className="relative container max-w-large">
                 <div className="py-16">
@@ -85,7 +89,9 @@ const HomeBanner = () => {
                     >
                         <CornerField className="top-0 right-0 w-30" />
                         <CornerField className="top-0 left-0 -rotate-90 w-30" />
+                        <StarsColumn className="top-1/2 left-0 -translate-y-1/2" />
                         <CornerField className="bottom-0 left-0 -rotate-180 w-30" />
+                        <StarsColumn className="top-1/2 right-0 -translate-y-1/2 rotate-180" />
                         <CornerField className="bottom-0 right-0 rotate-90 w-30" />
                     </div>
 

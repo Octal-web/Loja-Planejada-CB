@@ -1,5 +1,8 @@
+import CirclePath from "./CirclePath";
 import { ContactForm } from "./ContactForm";
+import CornerField from "./CornerField";
 import DrawPath from "./DrawPath";
+import MarkPath from "./MarkPath";
 
 const StartDot = () => (
     <svg className="fill-secondary w-6" viewBox="0 0 29.604 29.693">
@@ -9,8 +12,15 @@ const StartDot = () => (
 
 const HomeContact = () => {    
     return (
-        <section className="pt-32">
-            <div className="container max-w-medium">
+        <section className="relative pt-32">
+            <div className="absolute left-0 top-0">
+                <MarkPath className="absolute top-0 left-16 -translate-y-1/2 w-[81px]" fillClass="fill-secondary" delay={1} />
+                <CirclePath className="absolute top-16 -translate-x-1/2 w-[81px]" fillClass="fill-secondary"delay={1} />
+            </div>
+
+            <div className="relative container max-w-medium">
+                <CornerField className="-top-8 right-6 w-30 z-[1] fill-secondary" />
+
                 <div className="grid grid-cols-2">
                     <div>
                         <div className="flex items-center my-6">

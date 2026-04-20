@@ -4,18 +4,16 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import drawDetail from '../site/img/draw-detail.png';
-
-const DrawPath = ({ className }) => {
+const MarkPath = ({ className, fillClass = "fill-secondary", delay = 1 }) => {
     const pathRef = useRef();
-    const containerRef = useRef();
+    const containerRef = useRef(null);
+    
     const id = useId();
-
-    const maskId = `draw-mask-${id}`;
+    const maskId = `mark-mask-${id}`;
 
     useEffect(() => {
         const path = pathRef.current;
-        
+
         if (!path) return;
 
         const length = path.getTotalLength();
@@ -31,26 +29,27 @@ const DrawPath = ({ className }) => {
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: "top 80%",
+                toggleActions: "play none none none",
             },
             ease: "linear",
-            delay: 0.6,
+            delay: delay * 0.6,
         });
 
     }, []);
 
     return (
-        <div className={`${className} absolute scale-125`}>
-            <svg viewBox="0 0 710.719 139.086">
+        <div ref={containerRef} className={`${className} absolute`}>
+            <svg viewBox="0 0 81.1 80.3">
                 <defs>
                     <mask id={maskId}>
-                    <path ref={pathRef} fill="none" stroke="white" strokeWidth="30" d="M710.7,65.2c0,0-158.6-58.4-398.1-49s-301,38.6-301,56.3 s103.3,62.6,330.3,61s339.1-28.2,339.1-47S565.6,3.6,304.2,6.2s-263.5,13-263.5,13" />
+                        <polyline ref={pathRef} points="0,80.3 77.6,3.3 77.6,75 0,0" fill="none" stroke="white" strokeWidth="12" />
                     </mask>
                 </defs>
 
-                <image href={drawDetail} width="710.719" height="139.086" mask={`url(#${maskId})`} />
+                <path d="M72.5,78.4L41.1,47.2L9.4,77.9c-1,1-5.9,3.1-6.4,2.2L0,74l33.5-34.4L2.5,8.3 C1.3,7,0.6,3.3,0.7,1.9c0-1.9,6.9-2.1,8.6-0.4l31.4,30.9L71.8,2 c1.2-1.2,6.1-2.1,7.6-2c1.5,0.2,2,5.7,0.9,6.9L48.2,39.9l30.2,31 c1.5,1.5,2.4,5.6,2.7,7.3C81.3,79.9,73.8,79.7,72.5,78.4" className={fillClass} mask={`url(#${maskId})`} />
             </svg>
         </div>
     );
 };
 
-export default DrawPath;
+export default MarkPath;

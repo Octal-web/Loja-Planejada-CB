@@ -94,8 +94,8 @@ export const ContactForm = () => {
 
     return (
         <div className="ml-16">
-            <div className="relative bg-primary py-5 2xl:py-8 px-7 md:px-12 translate-x-[2vw]">
-                <h3 class="font-secondary text-4xl 2xl:text-[44px] 2xl:leading-[1.1] text-white font-semibold uppercase tracking-tight py-10">Solicite <span class="text-secondary">seu Projeto</span></h3>
+            <div className="relative bg-primary pt-5 pb-6 2xl:pt-8 2xl:pb-12 px-7 md:px-12 translate-x-[2vw]">
+                <h3 className="font-secondary text-4xl 2xl:text-[44px] 2xl:leading-[1.1] text-white font-semibold uppercase tracking-tight py-10">Solicite <span className="text-secondary">seu Projeto</span></h3>
                 <form
                     className="w-full transition-all duration-500 mt-4"
                     onSubmit={handleSubmit}
@@ -133,7 +133,7 @@ export const ContactForm = () => {
                     </div>
 
                     <div className="mb-4 min-[1440px]:mb-5 flex gap-3 md:gap-5 lg:gap-10 flex-col lg:flex-row">
-                        <div className="w-full">
+                        <div className="relative w-full" data-lenis-prevent={true}>
                             <label htmlFor="ambiente" className="inline-block text-xl 2xl:text-[22px] text-white opacity-80 mb-2">Ambientes de interesse</label>
                             <Select
                                 name="ambiente"
@@ -176,9 +176,9 @@ export const ContactForm = () => {
                                 </div>
                             </div>
 
-                            <label className="mt-2 mb-3 flex items-center text-xs">
-                                <input type="checkbox" name="politica" className="relative aspect-square w-5 h-5 cursor-pointer appearance-none border-primary rounded-full after:absolute after:top-1/2 after:left-1/2 after:aspect-square after:h-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:bg-transparent after:checked:bg-primary after:rounded-full checked:bg-none checked:border-primary checked:hover:border-primary checked:focus:border-primary checked:text-white focus:ring-offset-0 focus:ring-0" checked={data.politica} onChange={handleAware} />
-                                <span className="ml-2">Aceito os <span
+                            <label className="mt-2 mb-3 2xl:mb-7 flex items-center">
+                                <input type="checkbox" name="politica" className="relative aspect-square w-5 h-5 cursor-pointer appearance-none bg-secondary border-0 rounded-full after:absolute after:top-1/2 after:left-1/2 after:aspect-square after:h-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:bg-transparent after:checked:bg-primary after:rounded-full checked:bg-none checked:border-primary checked:hover:border-primary checked:focus:border-primary checked:text-secondary focus:ring-offset-0 focus:ring-0" checked={data.politica} onChange={handleAware} />
+                                <span className="text-white text-lg ml-2">Aceito os <span
                                     onClick={(e) => {
                                         e.preventDefault();
                                         setTermsVisible(!termsVisible);
