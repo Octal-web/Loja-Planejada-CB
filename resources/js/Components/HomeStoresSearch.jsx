@@ -104,7 +104,7 @@ const HomeStoresSearch = ({ setStores, isProcessing, setIsProcessing, hasSearche
                             return 'Sem resultados';
                         }}
                     />
-                    <button disabled={isProcessing || !selectedOption} type="submit" className="bg-secondary px-12 py-1 border border-l-0 border-white text-2xl font-semibold transition-all hover:bg-yellow-500 disabled:bg-opacity-50">
+                    <button disabled={isProcessing || !selectedOption} type="submit" className="bg-secondary px-4 sm:px-6 md:px-10 xl:px-12 py-1 border border-l-0 border-white sm>text-lg md:text-xl xl:text-2xl font-semibold transition-all hover:bg-yellow-500 disabled:bg-opacity-50">
                         Buscar
                     </button>
                 </div>

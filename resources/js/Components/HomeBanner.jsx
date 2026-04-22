@@ -77,21 +77,23 @@ const HomeBanner = () => {
                 style={{ backgroundImage: `url(${bannerBg})` }}
             />
 
-            <HomeFieldPaths />
-
             <div className="relative container max-w-large">
-                <div className="py-16">
+                <HomeFieldPaths />
+                
+                <div className="py-16 py-2 2xl:py-16">
                     <div
                         ref={fieldRef}
                         className="absolute inset-4 top-24 bottom-20 will-change-transform transform-gpu"
                         style={{ transformStyle: "preserve-3d" }}
                     >
-                        <CornerField className="top-0 right-0 w-30" />
-                        <CornerField className="top-0 left-0 -rotate-90 w-30" />
-                        <StarsColumn className="top-1/2 left-0 -translate-y-1/2" />
-                        <CornerField className="bottom-0 left-0 -rotate-180 w-30" />
-                        <StarsColumn className="top-1/2 right-0 -translate-y-1/2 rotate-180" />
-                        <CornerField className="bottom-0 right-0 rotate-90 w-30" />
+                        <div className="absolute -inset-14 -top-36 -bottom-44 md:inset-0 max-md:scale-75">
+                            <CornerField className="top-0 right-0 w-30" />
+                            <CornerField className="top-0 left-0 -rotate-90 w-30" />
+                            <StarsColumn className="max-md:hidden top-1/2 left-0 -translate-y-1/2" />
+                            <CornerField className="bottom-0 left-0 -rotate-180 w-30" />
+                            <StarsColumn className="max-md:hidden top-1/2 right-0 -translate-y-1/2 rotate-180" />
+                            <CornerField className="bottom-0 right-0 rotate-90 w-30" />
+                        </div>
                     </div>
 
                     <div className="relative flex flex-col md:mx-10 lg:mx-auto md:flex-row md:gap-10 lg:gap-0 items-center min-h-[calc(100vh_-_108px)] lg:min-h-[calc(100dvh_-_232px)]">
@@ -100,7 +102,7 @@ const HomeBanner = () => {
                             direction="right"
                             delay={2}
                         >
-                            <div className="relative w-fit mx-auto mt-10 lg:mt-8 2xl:mt-5 mb-10 lg:mb-16">
+                            <div className="relative w-fit mx-auto mt-10 lg:mt-8 2xl:mt-5 mb-10 lg:mb-16 max-md:scale-100 max-[1440px]:scale-90 origin-right">
                                 <div className="md:hidden flex gap-2 justify-center mb-7">
                                     {Array.from({ length: 6 }).map((__, i) => (
                                         <svg
@@ -147,11 +149,11 @@ const HomeBanner = () => {
                                 />
                             </Reveal>
 
-                            <div className="mb-8 lg:mb-0 lg:ml-24 lg:-mr-16 xl:grid lg:grid-cols-2 gap-6 flex flex-col items-center">
+                            <div className="mb-8 lg:mb-0 lg:ml-24 lg:-mr-16 xl:grid lg:grid-cols-2 gap-3 md:gap-6 flex flex-col items-center">
                                 <CustomLink
                                     href={route("Home.index")}
                                     to="#solicite-seu-projeto"
-                                    className="inline-block bg-secondary border-2 border-secondary rounded-full w-[280px] lg:w-full text-center tracking-tight px-8 py-4 font-semibold text-sm lg:text-lg transition-all hover:bg-yellow-500 hover:border-yellow-500"
+                                    className="inline-block bg-secondary border-2 border-secondary rounded-full w-[280px] lg:w-full text-center tracking-tight xl:px-2 2xl:px-8 py-4 font-semibold text-sm xl:text-base 2xl:text-lg transition-all hover:bg-yellow-500 hover:border-yellow-500"
                                 >
                                     Quero minha Smart TV
                                 </CustomLink>
@@ -159,7 +161,7 @@ const HomeBanner = () => {
                                 <CustomLink
                                     href={route("Home.index")}
                                     to="#programa"
-                                    className="inline-block bg-transparent border-2 border-white text-white rounded-full w-[280px] lg:w-full text-center tracking-tight px-8 py-4 font-semibold text-sm lg:text-lg transition-all hover:text-primary hover:bg-yellow-500 hover:border-yellow-500"
+                                    className="inline-block bg-transparent border-2 border-white text-white rounded-full w-[280px] lg:w-full text-center tracking-tight xl:px-2 2xl:px-8 py-4 font-semibold text-sm xl:text-base 2xl:text-lg transition-all hover:text-primary hover:bg-yellow-500 hover:border-yellow-500"
                                 >
                                     Saiba mais sobre a campanha
                                 </CustomLink>
@@ -174,7 +176,7 @@ const HomeBanner = () => {
                             <img
                                 src={promoAward}
                                 alt="Premiação Promoção Jogada Planejada"
-                                className="w-[85%] lg:w-[95%] max-w-[800px]"
+                                className="w-[85%] lg:w-[95%] max-w-[800px] max-md:scale-100 max-[1440px]:scale-90 origin-right"
                             />
                         </Reveal>
                     </div>

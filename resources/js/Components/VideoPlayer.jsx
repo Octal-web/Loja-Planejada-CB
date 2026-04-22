@@ -69,7 +69,7 @@ export const VideoPlayer = ({ src, poster = null, classList = [], autoplay = fal
     }, [autoplay]);
 
     return (
-        <div className="relative z-[1] w-full aspect-[64/89] md:max-w-[1280px] mx-auto">
+        <div className="relative z-[1] w-full aspect-[64/89] md:max-w-[1280px] max-h-screen mx-auto">
             <video
                 ref={videoRef}
                 className={`absolute inset-0 w-full h-full left-1/2 -translate-x-1/2 ${className}`}

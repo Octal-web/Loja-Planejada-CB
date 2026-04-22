@@ -39,7 +39,7 @@ const DrawPath = ({ className }) => {
     }, []);
 
     return (
-        <div className={`${className} absolute scale-125`}>
+        <div ref={containerRef} className={`${className} absolute scale-125`}>
             <svg viewBox="0 0 710.719 139.086">
                 <defs>
                     <mask id={maskId}>

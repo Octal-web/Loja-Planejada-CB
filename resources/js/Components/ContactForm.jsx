@@ -93,48 +93,48 @@ export const ContactForm = () => {
     };
 
     return (
-        <div className="ml-16">
-            <div className="relative bg-primary pt-5 pb-6 2xl:pt-8 2xl:pb-12 px-7 md:px-12 translate-x-[2vw]">
-                <h3 className="font-secondary text-4xl 2xl:text-[44px] 2xl:leading-[1.1] text-white font-semibold uppercase tracking-tight py-10">Solicite <span className="text-secondary">seu Projeto</span></h3>
+        <div className="xl:ml-16 max-md:mb-10">
+            <div className="relative bg-primary pt-5 pb-6 2xl:pt-8 2xl:pb-12 px-6 xl:px-10 2xl:px-12 md:translate-x-[2vw] z-[1]">
+                <h3 className="font-secondary text-4xl 2xl:text-[44px] 2xl:leading-[1.1] text-white font-semibold uppercase tracking-tight py-7 2xl:py-10">Solicite <span className="text-secondary">seu Projeto</span></h3>
                 <form
                     className="w-full transition-all duration-500 mt-4"
                     onSubmit={handleSubmit}
                 >
-                    <div className="mb-4 min-[1440px]:mb-5 flex gap-3 md:gap-5 lg:gap-10 flex-col lg:flex-row">
+                    <div className="mb-3 min-[1440px]:mb-5 flex gap-3 md:gap-5 lg:gap-10 flex-col lg:flex-row">
                         <div className="w-full">
-                            <label htmlFor="nome" className="inline-block text-xl 2xl:text-[22px] text-white opacity-80 mb-2">Nome completo</label>
-                            <input type="text" name="nome" value={data.nome} onChange={handleChange} placeholder="Seu nome completo" className="w-full h-12 2xl:h-16 px-7 text-white text-xl 2xl:text-[22px] border-0 bg-[#654433] rounded-lg transition-all duration-200 focus:border-primary focus:ring-0 focus:shadow-md placeholder:text-white placeholder:text-opacity-20" />
+                            <label htmlFor="nome" className="inline-block text-lg sm:text-xl 2xl:text-[22px] text-white opacity-80 mb-1 sm:mb-1.5 2xl:mb-2">Nome completo</label>
+                            <input type="text" name="nome" value={data.nome} onChange={handleChange} placeholder="Seu nome completo" className="w-full h-12 2xl:h-16 px-4 sm:px-7 text-white text-lg sm:text-xl 2xl:text-[22px] border-0 bg-[#654433] rounded-lg transition-all duration-200 focus:border-primary focus:ring-0 focus:shadow-md placeholder:text-white placeholder:text-opacity-20" />
                             {errors.nome && <p className="text-xs text-white bg-red-900 px-3 py-1.5 mt-2">{errors.nome}</p>}
                         </div>
                     </div>
 
-                    <div className="mb-4 min-[1440px]:mb-5 flex gap-3 md:gap-5 lg:gap-10 flex-col lg:flex-row">
+                    <div className="mb-3 min-[1440px]:mb-5 flex gap-3 md:gap-5 lg:gap-10 flex-col lg:flex-row">
                         <div className="w-full">
-                            <label htmlFor="telefone" className="inline-block text-xl 2xl:text-[22px] text-white opacity-80 mb-2">Telefone</label>
-                            <InputMask type="text" name="telefone" mask={phoneMask} replacement={{ _: /\d/ }} value={data.telefone} onChange={handleChange} placeholder="Seu telefone: (DDD) + número" className="w-full h-12 2xl:h-16 px-7 text-white text-xl 2xl:text-[22px] border-0 bg-[#654433] rounded-lg transition-all duration-200 focus:border-primary focus:ring-0 focus:shadow-md placeholder:text-white placeholder:text-opacity-20" />
+                            <label htmlFor="telefone" className="inline-block text-lg sm:text-xl 2xl:text-[22px] text-white opacity-80 mb-1 sm:mb-1.5 2xl:mb-2">Telefone</label>
+                            <InputMask type="text" name="telefone" mask={phoneMask} replacement={{ _: /\d/ }} value={data.telefone} onChange={handleChange} placeholder="Seu telefone: (DDD) + número" className="w-full h-12 2xl:h-16 px-4 sm:px-7 text-white text-lg sm:text-xl 2xl:text-[22px] border-0 bg-[#654433] rounded-lg transition-all duration-200 focus:border-primary focus:ring-0 focus:shadow-md placeholder:text-white placeholder:text-opacity-20" />
                             {errors.telefone && <p className="text-xs text-white bg-red-900 px-3 py-1.5 mt-2">{errors.telefone}</p>}
                         </div>
                     </div>
 
-                    <div className="mb-4 min-[1440px]:mb-5 flex gap-3 md:gap-5 lg:gap-10 flex-col lg:flex-row">
+                    <div className="mb-3 min-[1440px]:mb-5 flex gap-3 md:gap-5 lg:gap-10 flex-col lg:flex-row">
                         <div className="w-full">
-                            <label htmlFor="email" className="inline-block text-xl 2xl:text-[22px] text-white opacity-80 mb-2">E-mail</label>
-                            <input type="text" name="email" value={data.email} onChange={handleChange} placeholder="Seu e-mail" className="w-full h-12 2xl:h-16 px-7 text-white text-xl 2xl:text-[22px] border-0 bg-[#654433] rounded-lg transition-all duration-200 focus:border-primary focus:ring-0 focus:shadow-md placeholder:text-white placeholder:text-opacity-20" />
+                            <label htmlFor="email" className="inline-block text-lg sm:text-xl 2xl:text-[22px] text-white opacity-80 mb-1 sm:mb-1.5 2xl:mb-2">E-mail</label>
+                            <input type="text" name="email" value={data.email} onChange={handleChange} placeholder="Seu e-mail" className="w-full h-12 2xl:h-16 px-4 sm:px-7 text-white text-lg sm:text-xl 2xl:text-[22px] border-0 bg-[#654433] rounded-lg transition-all duration-200 focus:border-primary focus:ring-0 focus:shadow-md placeholder:text-white placeholder:text-opacity-20" />
                             {errors.email && <p className="text-xs text-white bg-red-900 px-3 py-1.5 mt-2">{errors.email}</p>}
                         </div>
                     </div>
 
-                    <div className="mb-4 min-[1440px]:mb-5 flex gap-3 md:gap-5 lg:gap-10 flex-col lg:flex-row">
+                    <div className="mb-3 min-[1440px]:mb-5 flex gap-3 md:gap-5 lg:gap-10 flex-col lg:flex-row">
                         <div className="w-full">
-                            <label htmlFor="cep" className="inline-block text-xl 2xl:text-[22px] text-white opacity-80 mb-2">CEP</label>
-                            <InputMask type="text" name="cep" mask="_____-___" replacement={{ _: /\d/ }} value={data.cep} onChange={handleChange} placeholder="Seu CEP" className="w-full h-12 2xl:h-16 px-7 text-white text-xl 2xl:text-[22px] border-0 bg-[#654433] rounded-lg transition-all duration-200 focus:border-primary focus:ring-0 focus:shadow-md placeholder:text-white placeholder:text-opacity-20" />
+                            <label htmlFor="cep" className="inline-block text-lg sm:text-xl 2xl:text-[22px] text-white opacity-80 mb-1 sm:mb-1.5 2xl:mb-2">CEP</label>
+                            <InputMask type="text" name="cep" mask="_____-___" replacement={{ _: /\d/ }} value={data.cep} onChange={handleChange} placeholder="Seu CEP" className="w-full h-12 2xl:h-16 px-4 sm:px-7 text-white text-lg sm:text-xl 2xl:text-[22px] border-0 bg-[#654433] rounded-lg transition-all duration-200 focus:border-primary focus:ring-0 focus:shadow-md placeholder:text-white placeholder:text-opacity-20" />
                             {errors.cep && <p className="text-xs text-white bg-red-900 px-3 py-1.5 mt-2">{errors.cep}</p>}
                         </div>
                     </div>
 
-                    <div className="mb-4 min-[1440px]:mb-5 flex gap-3 md:gap-5 lg:gap-10 flex-col lg:flex-row">
+                    <div className="mb-3 min-[1440px]:mb-5 flex gap-3 md:gap-5 lg:gap-10 flex-col lg:flex-row">
                         <div className="relative w-full" data-lenis-prevent={true}>
-                            <label htmlFor="ambiente" className="inline-block text-xl 2xl:text-[22px] text-white opacity-80 mb-2">Ambientes de interesse</label>
+                            <label htmlFor="ambiente" className="inline-block text-lg sm:text-xl 2xl:text-[22px] text-white opacity-80 mb-1 sm:mb-1.5 2xl:mb-2">Ambientes de interesse</label>
                             <Select
                                 name="ambiente"
                                 options={EnvironmentOptions}
@@ -178,7 +178,7 @@ export const ContactForm = () => {
 
                             <label className="mt-2 mb-3 2xl:mb-7 flex items-center">
                                 <input type="checkbox" name="politica" className="relative aspect-square w-5 h-5 cursor-pointer appearance-none bg-secondary border-0 rounded-full after:absolute after:top-1/2 after:left-1/2 after:aspect-square after:h-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:bg-transparent after:checked:bg-primary after:rounded-full checked:bg-none checked:border-primary checked:hover:border-primary checked:focus:border-primary checked:text-secondary focus:ring-offset-0 focus:ring-0" checked={data.politica} onChange={handleAware} />
-                                <span className="text-white text-lg ml-2">Aceito os <span
+                                <span className="text-white sm:text-lg ml-2">Aceito os <span
                                     onClick={(e) => {
                                         e.preventDefault();
                                         setTermsVisible(!termsVisible);
@@ -196,7 +196,7 @@ export const ContactForm = () => {
                         <button
                             type="submit"
                             disabled={processing}
-                            className="flex gap-2 max-lg:block text-primary lg:text-sm xl:text-base 2xl:text-lg tracking-tight bg-secondary border-2 border-secondary fill-primary rounded-full px-4 xl:px-10 py-3.5 font-semibold transition-all hover:bg-yellow-500 hover:border-yellow-500 disabled:bg-opacity-50 disabled:border-secondary disabled:text-secondary disabled:fill-secondary"
+                            className="flex gap-2 text-primary lg:text-sm xl:text-base 2xl:text-lg tracking-tighter sm:tracking-tight bg-secondary border-2 border-secondary fill-primary rounded-full px-4 xl:px-10 py-3.5 font-semibold transition-all hover:bg-yellow-500 hover:border-yellow-500 disabled:bg-opacity-50 disabled:border-secondary disabled:text-secondary disabled:fill-secondary"
                         >
                             {!processing ? (
                                 <>

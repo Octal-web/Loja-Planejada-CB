@@ -130,7 +130,7 @@ const DefaultLayout = ({ children }) => {
                 <div className={`fixed inset-0 bg-black lg:hidden duration-300 ease-out ${isMenuOpen ? 'opacity-30' : 'opacity-0 h-0'}`} onClick={() => {setIsMenuOpen(false)}}></div>
                 <div className="container max-w-medium">
                     <div className="flex items-center justify-between">
-                        <div className="relative z-[1] flex items-center justify-between w-full h-24 lg:h-28 2xl:h-30">
+                        <div className="relative z-[1] flex items-center justify-between w-full h-20 lg:h-24 2xl:h-30">
                             <h1 className="absolute top-8 z-[1] left-[6%]">
                                 <Link href={route('Home.index')} className="">
                                     <img src={logo} alt="Logo" className={`block max-w-30 lg:max-w-40 min-[1760px]:max-w-44 transition-all ${isVisible ? 'translate-y-0' : '-translate-y-1/2'}`} />
@@ -179,7 +179,7 @@ const DefaultLayout = ({ children }) => {
                                             <CustomLink
                                                 href={route('Home.index')}
                                                 to="#solicite-seu-projeto"
-                                                className="flex gap-2 max-lg:block text-primary lg:text-sm xl:text-base 2xl:text-lg tracking-tight bg-secondary border-2 border-secondary fill-primary rounded-full px-4 xl:px-10 py-3.5 font-semibold transition-all hover:bg-primary hover:border-primary hover:text-secondary hover:fill-secondary"
+                                                className="flex gap-2 text-primary lg:text-sm xl:text-base 2xl:text-lg tracking-tight bg-secondary border-2 border-secondary fill-primary rounded-full px-4 xl:px-8 2xl:px-10 py-3.5 font-semibold transition-all hover:bg-primary hover:border-primary hover:text-secondary hover:fill-secondary"
                                             >
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-4" viewBox="0 0 15.35 13.36">
                                                     <path d="M8.67,13.36l-1.15-1.13,4.73-4.73H0v-1.64H12.25L7.52,1.15l1.15-1.15,6.68,6.68-6.68,6.68Z"/>
@@ -223,15 +223,16 @@ const DefaultLayout = ({ children }) => {
                 </div>
             </header>
 
-            <main className="overflow-hidden pt-24
-             lg:pt-28 2xl:pt-30">
+            <main className="overflow-hidden pt-20 lg:pt-24 2xl:pt-30">
                 {children}
             </main>
 
             <footer className="relative bg-[#31231C]">
-                <ShortArrowPath className="absolute right-14 top-6 w-[417px] translate-x-1/2 rotate-[28deg]" fillClass="fill-secondary" delay={0.6} />
+                <div className="absolute top-0 right-0 max-md:scale-50 max-2xl:scale-75 origin-top-right overflow-hidden w-full -top-16 h-full">
+                    <ShortArrowPath className="absolute right-14 top-24 w-[417px] translate-x-1/2 rotate-[28deg]" fillClass="fill-secondary" delay={0.6} />
+                </div>
 
-                <div className="container max-w-large">
+                <div className="relative container max-w-large">
                     <div className="pb-10">
                         <img src={logo} className="w-2/6 sm:w-40 xl:w-36 2xl:w-44 mx-auto -mb-20 -translate-y-1/2" />
 
