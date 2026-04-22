@@ -8,6 +8,7 @@ export default defineConfig({
         laravel({
             input: 'resources/js/app.jsx',
             refresh: true,
+            buildDirectory: 'jogada-planejada',
         }),
         react(),
     ],
