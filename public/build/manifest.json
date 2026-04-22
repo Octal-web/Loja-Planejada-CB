@@ -1,0 +1,95 @@
+{
+  "resources/js/Pages/Home.jsx": {
+    "file": "assets/Home-BDG9Pi4K.js",
+    "name": "Home",
+    "src": "resources/js/Pages/Home.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ],
+    "assets": [
+      "assets/logo-BC_FuheQ.png",
+      "assets/octalweb-logo-CRy3Ke0p.png",
+      "assets/draw-detail-DCqFOQ8n.png",
+      "assets/promo-logo-BZwoNm-f.png",
+      "assets/home-banner-7LVBRlYZ.jpg",
+      "assets/promo-award-DfoAqwzT.png",
+      "assets/play-btn-D6cU5Lhx.png",
+      "assets/pause-btn-BtbLM_IJ.png",
+      "assets/campaign-poster-CtZPRQAK.jpg",
+      "assets/campaign-video-B9YjpInH.mp4",
+      "assets/step-price-2-CRBBi2GG.png",
+      "assets/step-project-1-DolHu4L1.png",
+      "assets/step-tv-3-B3MVjNR8.png",
+      "assets/tv-award-BpuY8oYn.png"
+    ]
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-CPli3LZl.js",
+    "name": "app",
+    "src": "resources/js/app.jsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Home.jsx"
+    ],
+    "css": [
+      "assets/app-CEgUV3rs.css"
+    ]
+  },
+  "resources/js/content/display/campaign-poster.jpg": {
+    "file": "assets/campaign-poster-CtZPRQAK.jpg",
+    "src": "resources/js/content/display/campaign-poster.jpg"
+  },
+  "resources/js/content/display/home-banner.jpg": {
+    "file": "assets/home-banner-7LVBRlYZ.jpg",
+    "src": "resources/js/content/display/home-banner.jpg"
+  },
+  "resources/js/content/display/promo-award.png": {
+    "file": "assets/promo-award-DfoAqwzT.png",
+    "src": "resources/js/content/display/promo-award.png"
+  },
+  "resources/js/content/display/promo-logo.png": {
+    "file": "assets/promo-logo-BZwoNm-f.png",
+    "src": "resources/js/content/display/promo-logo.png"
+  },
+  "resources/js/content/steps/step-price-2.png": {
+    "file": "assets/step-price-2-CRBBi2GG.png",
+    "src": "resources/js/content/steps/step-price-2.png"
+  },
+  "resources/js/content/steps/step-project-1.png": {
+    "file": "assets/step-project-1-DolHu4L1.png",
+    "src": "resources/js/content/steps/step-project-1.png"
+  },
+  "resources/js/content/steps/step-tv-3.png": {
+    "file": "assets/step-tv-3-B3MVjNR8.png",
+    "src": "resources/js/content/steps/step-tv-3.png"
+  },
+  "resources/js/content/video/campaign-video.mp4": {
+    "file": "assets/campaign-video-B9YjpInH.mp4",
+    "src": "resources/js/content/video/campaign-video.mp4"
+  },
+  "resources/js/site/img/draw-detail.png": {
+    "file": "assets/draw-detail-DCqFOQ8n.png",
+    "src": "resources/js/site/img/draw-detail.png"
+  },
+  "resources/js/site/img/logo.png": {
+    "file": "assets/logo-BC_FuheQ.png",
+    "src": "resources/js/site/img/logo.png"
+  },
+  "resources/js/site/img/octalweb-logo.png": {
+    "file": "assets/octalweb-logo-CRy3Ke0p.png",
+    "src": "resources/js/site/img/octalweb-logo.png"
+  },
+  "resources/js/site/img/pause-btn.png": {
+    "file": "assets/pause-btn-BtbLM_IJ.png",
+    "src": "resources/js/site/img/pause-btn.png"
+  },
+  "resources/js/site/img/play-btn.png": {
+    "file": "assets/play-btn-D6cU5Lhx.png",
+    "src": "resources/js/site/img/play-btn.png"
+  },
+  "resources/js/site/img/tv-award.png": {
+    "file": "assets/tv-award-BpuY8oYn.png",
+    "src": "resources/js/site/img/tv-award.png"
+  }
+}
