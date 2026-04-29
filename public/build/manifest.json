@@ -1,6 +1,6 @@
 {
   "resources/js/Pages/Home.jsx": {
-    "file": "assets/Home-CMFs3Tjx.js",
+    "file": "assets/Home-CTg7_sH2.js",
     "name": "Home",
     "src": "resources/js/Pages/Home.jsx",
     "isDynamicEntry": true,
@@ -17,7 +17,7 @@
       "assets/play-btn-D6cU5Lhx.png",
       "assets/pause-btn-BtbLM_IJ.png",
       "assets/campaign-poster-CtZPRQAK.jpg",
-      "assets/campaign-video-B9YjpInH.mp4",
+      "assets/campaign-video-fBg2V_WO.mp4",
       "assets/step-price-2-CRBBi2GG.png",
       "assets/step-project-1-DolHu4L1.png",
       "assets/step-tv-3-B3MVjNR8.png",
@@ -25,7 +25,7 @@
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-CotyYEYw.js",
+    "file": "assets/app-CINe5e88.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
@@ -65,7 +65,7 @@
     "src": "resources/js/content/steps/step-tv-3.png"
   },
   "resources/js/content/video/campaign-video.mp4": {
-    "file": "assets/campaign-video-B9YjpInH.mp4",
+    "file": "assets/campaign-video-fBg2V_WO.mp4",
     "src": "resources/js/content/video/campaign-video.mp4"
   },
   "resources/js/site/img/draw-detail.png": {
