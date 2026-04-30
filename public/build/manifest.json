@@ -1,15 +1,25 @@
 {
-  "resources/js/Pages/Home.jsx": {
-    "file": "assets/Home-pBeWYIK-.js",
-    "name": "Home",
-    "src": "resources/js/Pages/Home.jsx",
-    "isDynamicEntry": true,
+  "_CirclePath-dz35Rpso.js": {
+    "file": "assets/CirclePath-dz35Rpso.js",
+    "name": "CirclePath",
     "imports": [
       "resources/js/app.jsx"
     ],
     "assets": [
       "assets/logo-BC_FuheQ.png",
-      "assets/octalweb-logo-CRy3Ke0p.png",
+      "assets/octalweb-logo-CRy3Ke0p.png"
+    ]
+  },
+  "resources/js/Pages/Home.jsx": {
+    "file": "assets/Home-vBBfREz8.js",
+    "name": "Home",
+    "src": "resources/js/Pages/Home.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_CirclePath-dz35Rpso.js"
+    ],
+    "assets": [
       "assets/draw-detail-DCqFOQ8n.png",
       "assets/promo-logo-BZwoNm-f.png",
       "assets/home-banner-7LVBRlYZ.jpg",
@@ -24,16 +34,27 @@
       "assets/tv-award-BpuY8oYn.png"
     ]
   },
+  "resources/js/Pages/Regulamento.jsx": {
+    "file": "assets/Regulamento-BpwCKstq.js",
+    "name": "Regulamento",
+    "src": "resources/js/Pages/Regulamento.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_CirclePath-dz35Rpso.js"
+    ]
+  },
   "resources/js/app.jsx": {
-    "file": "assets/app-CU-g4y1C.js",
+    "file": "assets/app-DlFQ55mS.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
     "dynamicImports": [
-      "resources/js/Pages/Home.jsx"
+      "resources/js/Pages/Home.jsx",
+      "resources/js/Pages/Regulamento.jsx"
     ],
     "css": [
-      "assets/app-CEgUV3rs.css"
+      "assets/app-BWdXChGe.css"
     ]
   },
   "resources/js/content/display/campaign-poster.jpg": {
