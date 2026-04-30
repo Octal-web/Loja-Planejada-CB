@@ -43,21 +43,14 @@ export default {
                 'primary': '#4e362a',
                 'secondary': '#FFD532',
             },
-            animation: {
-                float: 'float 6s ease-in-out infinite alternate',
-                rotate: 'rotate 6s ease-in-out infinite alternate',
-            },
             keyframes: {
-                float: {
-                    '0%':   { transform: 'translateY(0px) rotate(24deg)' },
-                    '50%':  { transform: 'translateY(-10px) rotate(24deg)' },
-                    '100%': { transform: 'translateY(0px) rotate(24deg)' },
-                },
-                rotate: {
-                    '0%':   { transform: 'rotate(0deg)' },
-                    '50%':  { transform: 'rotate(3deg)' },
-                    '100%': { transform: 'rotate(0deg)' },
-                },
+                'fade-in-down': {
+                    '0%': { opacity: '0', transform: 'translate3d(0,-100px,0)' },
+                    '100%': { opacity: '1', transform: 'none' },
+                }
+            },
+            animation: {
+                'fade-in-down': 'fade-in-down 200ms linear'
             },
         },
     },

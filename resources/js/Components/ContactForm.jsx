@@ -1,12 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link, useForm } from '@inertiajs/react';
+import { useForm, usePage } from '@inertiajs/react';
 import { InputMask } from '@react-input/mask';
 import Select from 'react-select';
+import AnimatedCheckMark from './AnimatedCheckMark';
 
 export const ContactForm = () => {
+    const { message } = usePage().props;
+
     const [phoneMask, setPhoneMask] = useState("(__) ____-____");
     const [aware, setAware] = useState(false);
     const [termsVisible, setTermsVisible] = useState(false);
+    const [isSuccessful, setIsSuccessful] = useState(false);
     
     const urlParams = new URLSearchParams(window.location.search);
     
@@ -19,7 +23,7 @@ export const ContactForm = () => {
         politica: false,
         origem: urlParams.get('utm_source') || '',
         campanha: urlParams.get('utm_campaign') || '',
-        grupo: urlParams.get('group') || '',
+        grupo: urlParams.get('utm_group') || '',
         anuncio: urlParams.get('utm_content') || '',
         posicao_formulario: 'Página Formulário',
         entrada: '',
@@ -75,7 +79,7 @@ export const ContactForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        post(route('Projetos.enviar'), {
+        post(route('Contato.enviar'), {
             preserveScroll: true,
             onSuccess: (page) => {
                 window.location.href = page.props.message.url;
@@ -92,6 +96,24 @@ export const ContactForm = () => {
         handleChange(e);
     };
 
+    useEffect(() => {  
+        if (message && message.type === 'success') {
+            setIsSuccessful(true);
+
+            setTimeout(() => {
+                setData({
+                    nome: '',
+                    email: '',
+                    telefone: '',
+                    mensagem: '',
+                    politica: false,
+                });
+
+                setIsSuccessful(false);
+            }, 3000);
+        }
+    }, [message]);
+
     return (
         <div className="xl:ml-16 max-md:mb-10">
             <div className="relative bg-primary pt-5 pb-6 2xl:pt-8 2xl:pb-12 px-6 xl:px-10 2xl:px-12 md:translate-x-[2vw] z-[1]">
@@ -104,7 +126,7 @@ export const ContactForm = () => {
                         <div className="w-full">
                             <label htmlFor="nome" className="inline-block text-lg sm:text-xl 2xl:text-[22px] text-white opacity-80 mb-1 sm:mb-1.5 2xl:mb-2">Nome completo</label>
                             <input type="text" name="nome" value={data.nome} onChange={handleChange} placeholder="Seu nome completo" className="w-full h-12 2xl:h-16 px-4 sm:px-7 text-white text-lg sm:text-xl 2xl:text-[22px] border-0 bg-[#654433] rounded-lg transition-all duration-200 focus:border-primary focus:ring-0 focus:shadow-md placeholder:text-white placeholder:text-opacity-20" />
-                            {errors.nome && <p className="text-xs text-white bg-red-900 px-3 py-1.5 mt-2">{errors.nome}</p>}
+                            {errors.nome && <p className="text-xs text-white bg-red-900 px-3 py-1.5 mt-1.5 -mb-1">{errors.nome}</p>}
                         </div>
                     </div>
 
@@ -112,7 +134,7 @@ export const ContactForm = () => {
                         <div className="w-full">
                             <label htmlFor="telefone" className="inline-block text-lg sm:text-xl 2xl:text-[22px] text-white opacity-80 mb-1 sm:mb-1.5 2xl:mb-2">Telefone</label>
                             <InputMask type="text" name="telefone" mask={phoneMask} replacement={{ _: /\d/ }} value={data.telefone} onChange={handleChange} placeholder="Seu telefone: (DDD) + número" className="w-full h-12 2xl:h-16 px-4 sm:px-7 text-white text-lg sm:text-xl 2xl:text-[22px] border-0 bg-[#654433] rounded-lg transition-all duration-200 focus:border-primary focus:ring-0 focus:shadow-md placeholder:text-white placeholder:text-opacity-20" />
-                            {errors.telefone && <p className="text-xs text-white bg-red-900 px-3 py-1.5 mt-2">{errors.telefone}</p>}
+                            {errors.telefone && <p className="text-xs text-white bg-red-900 px-3 py-1.5 mt-1.5 -mb-1">{errors.telefone}</p>}
                         </div>
                     </div>
 
@@ -120,7 +142,7 @@ export const ContactForm = () => {
                         <div className="w-full">
                             <label htmlFor="email" className="inline-block text-lg sm:text-xl 2xl:text-[22px] text-white opacity-80 mb-1 sm:mb-1.5 2xl:mb-2">E-mail</label>
                             <input type="text" name="email" value={data.email} onChange={handleChange} placeholder="Seu e-mail" className="w-full h-12 2xl:h-16 px-4 sm:px-7 text-white text-lg sm:text-xl 2xl:text-[22px] border-0 bg-[#654433] rounded-lg transition-all duration-200 focus:border-primary focus:ring-0 focus:shadow-md placeholder:text-white placeholder:text-opacity-20" />
-                            {errors.email && <p className="text-xs text-white bg-red-900 px-3 py-1.5 mt-2">{errors.email}</p>}
+                            {errors.email && <p className="text-xs text-white bg-red-900 px-3 py-1.5 mt-1.5 -mb-1">{errors.email}</p>}
                         </div>
                     </div>
 
@@ -128,7 +150,7 @@ export const ContactForm = () => {
                         <div className="w-full">
                             <label htmlFor="cep" className="inline-block text-lg sm:text-xl 2xl:text-[22px] text-white opacity-80 mb-1 sm:mb-1.5 2xl:mb-2">CEP</label>
                             <InputMask type="text" name="cep" mask="_____-___" replacement={{ _: /\d/ }} value={data.cep} onChange={handleChange} placeholder="Seu CEP" className="w-full h-12 2xl:h-16 px-4 sm:px-7 text-white text-lg sm:text-xl 2xl:text-[22px] border-0 bg-[#654433] rounded-lg transition-all duration-200 focus:border-primary focus:ring-0 focus:shadow-md placeholder:text-white placeholder:text-opacity-20" />
-                            {errors.cep && <p className="text-xs text-white bg-red-900 px-3 py-1.5 mt-2">{errors.cep}</p>}
+                            {errors.cep && <p className="text-xs text-white bg-red-900 px-3 py-1.5 mt-1.5 -mb-1">{errors.cep}</p>}
                         </div>
                     </div>
 
@@ -144,7 +166,7 @@ export const ContactForm = () => {
                                 placeholder="Selecione ao menos um ambiente"
                                 onChange={handleEnvironmentChange}
                             />
-                            {errors.ambiente && <p className="text-xs text-white bg-red-900 px-3 py-1.5 mt-2">{errors.ambiente}</p>}
+                            {errors.ambiente && <p className="text-xs text-white bg-red-900 px-3 py-1.5 mt-1.5 -mb-1">{errors.ambiente}</p>}
                         </div>
                     </div>
 
@@ -186,9 +208,9 @@ export const ContactForm = () => {
                                     className="font-bold cursor-pointer"
                                 >
                                     Termos de Uso
-                                </span> e a <Link href={route('Politicas.privacidade')} className="font-bold" target="_blank" rel="noopener noreferrer">Política de Privacidade</Link></span>
+                                </span> e a <a href="https://casabrasileiraplanejados.com.br/politica-de-privacidade" target="_blank" rel="noopener noreferrer" className="font-bold">Política de Privacidade</a></span>
                             </label>
-                            {errors.politica && <p className="text-xs text-white bg-red-900 px-3 py-1.5 mt-2">{errors.politica}</p>}
+                            {errors.politica && <p className="text-xs text-white bg-red-900 px-3 py-1.5 -mt-5 mb-3">{errors.politica}</p>}
                         </div>
                     </div>
 
@@ -196,7 +218,7 @@ export const ContactForm = () => {
                         <button
                             type="submit"
                             disabled={processing}
-                            className="flex gap-2 text-primary lg:text-sm xl:text-base 2xl:text-lg tracking-tighter sm:tracking-tight bg-secondary border-2 border-secondary fill-primary rounded-full px-4 xl:px-10 py-3.5 font-semibold transition-all hover:bg-yellow-500 hover:border-yellow-500 disabled:bg-opacity-50 disabled:border-secondary disabled:text-secondary disabled:fill-secondary"
+                            className="relative flex gap-2 text-primary lg:text-sm xl:text-base 2xl:text-lg tracking-tighter sm:tracking-tight bg-secondary border-2 border-secondary fill-primary rounded-full px-4 xl:px-10 py-3.5 font-semibold transition-all hover:bg-yellow-500 hover:border-yellow-500 disabled:bg-opacity-50 disabled:border-secondary disabled:text-secondary disabled:fill-secondary"
                         >
                             {!processing ? (
                                 <>
@@ -206,17 +228,35 @@ export const ContactForm = () => {
                                     Quero minha Smart TV Samsung
                                 </>
                             ) : (
-                                <div role="status" className="flex justify-center items-center">
-                                    <svg aria-hidden="true" className="w-8 h-8 text-gray-200 animate-spin fill-primary" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
-                                        <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
-                                    </svg>
-                                    <span className="sr-only">Loading...</span>
-                                </div>
+                                <>
+                                    <span className="opacity-0 contents">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 opacity-0" viewBox="0 0 15.35 13.36">
+                                            <path d="M8.67,13.36l-1.15-1.13,4.73-4.73H0v-1.64H12.25L7.52,1.15l1.15-1.15,6.68,6.68-6.68,6.68Z"/>
+                                        </svg>
+                                        <span className="opacity-0">Quero minha Smart TV Samsung</span>
+                                    </span>
+
+                                    <div role="status" className="absolute inset-0 flex justify-center items-center">
+                                        <svg aria-hidden="true" className="w-8 h-8 text-gray-200 animate-spin fill-primary" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                                            <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+                                        </svg>
+                                        <span className="sr-only">Loading...</span>
+                                    </div>
+                                </>
                             )}
                         </button>
                     </div>
                 </form>
+                
+                {isSuccessful && (
+                    <div className={`absolute inset-0 flex flex-col items-center justify-center bg-primary pointer-events-none animate-fade-in-down`}>
+                        <AnimatedCheckMark />
+
+                        <h2 className="font-secondary text-secondary text-4xl text-center font-semibold mt-4 mb-2">Obrigado!</h2>
+                        <h4 className="text-white text-2xl text-center">Seu contato foi enviado com sucesso.</h4>
+                    </div>
+                )}
             </div>
         </div>
     );

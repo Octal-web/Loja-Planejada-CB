@@ -160,7 +160,7 @@ const HomeBanner = () => {
 
                                 <CustomLink
                                     href={route("Home.index")}
-                                    to="#programa"
+                                    to="#campanha"
                                     className="inline-block bg-transparent border-2 border-white text-white rounded-full w-[280px] lg:w-full text-center tracking-tight xl:px-2 2xl:px-8 py-4 font-semibold text-sm xl:text-base 2xl:text-lg transition-all hover:text-primary hover:bg-yellow-500 hover:border-yellow-500"
                                 >
                                     Saiba mais sobre a campanha

@@ -10,9 +10,9 @@ const StarDot = () => (
     </svg>
 );
 
-const HomeContact = () => {    
+const HomeContact = () => {
     return (
-        <section className="relative pt-24 2xl:pt-32">
+        <section className="relative pt-24 2xl:pt-32" id="solicite-seu-projeto">
             <div className="absolute left-0 top-0 max-md:scale-50 max-2xl:scale-75">
                 <MarkPath className="top-0 left-16 -translate-y-1/2 w-[81px]" fillClass="fill-secondary" delay={1} />
                 <CirclePath className="top-16 -translate-x-1/2 w-[81px]" fillClass="fill-secondary"delay={1} />
@@ -40,7 +40,7 @@ const HomeContact = () => {
                             <li className="flex items-center gap-2 sm:gap-4"><StarDot /> Projeto exclusivo para o seu espaço</li>
                             <li className="flex items-center gap-2 sm:gap-4"><StarDot /> Móveis planejados com o jeito do Brasil</li>
                             <li className="flex items-center gap-2 sm:gap-4"><StarDot /> Ganhe uma Smart TV Samsung 50” nos projetos acima de R$ 49.990</li>
-                            <li className="flex items-center gap-2 sm:gap-4"><StarDot /> Promoção válida até o fim da Copa</li>
+                            <li className="flex items-center gap-2 sm:gap-4"><StarDot /> Promoção válida de 05/05/2026 até 17/07/2026</li>
                             <li className="flex items-center gap-2 sm:gap-4"><StarDot /> Atendimento via WhatsApp</li>
                         </ul>
                     </div>

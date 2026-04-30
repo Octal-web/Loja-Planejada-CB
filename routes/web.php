@@ -7,7 +7,6 @@ use App\Http\Controllers\CidadesController;
 use App\Http\Controllers\LojasController;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\RegulamentoController;
-use App\Http\Controllers\PoliticasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +26,4 @@ Route::prefix('/jogada-planejada')->group(function() {
     Route::post('/contato/enviar', [ContatoController::class, 'enviar'])->name('Contato.enviar');
 
     Route::get('/regulamento', [RegulamentoController::class, 'index'])->name('Regulamento.index');
-
-    Route::get('/politica-de-privacidade', [PoliticasController::class, 'privacidade'])->name('Politicas.privacidade');
 });

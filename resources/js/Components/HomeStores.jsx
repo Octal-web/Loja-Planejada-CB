@@ -12,7 +12,7 @@ const HomeStores = () => {
     const [hasSearched, setHasSearched] = useState(false);
     
     return (
-        <section className="relative bg-primary py-24 2xl:py-32">
+        <section className="relative bg-primary py-24 2xl:py-32" id="lojas-participantes">
             <div className="absolute right-0 top-0 max-md:scale-50 max-2xl:scale-75 origin-top-right">
                 <MarkPath className="absolute right-72 -translate-y-1/2 rotate-[7deg] w-[81px]" fillClass="fill-secondary" />
                 <CirclePath className="absolute right-48 top-20 -translate-x-1/2 w-[81px]" fillClass="fill-secondary" delay={1.5} />

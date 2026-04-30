@@ -100,7 +100,7 @@ const DefaultLayout = ({ children }) => {
 
     const menuItems = [
         { name: "A campanha", route: "Home.index", to: "#campanha", external: false },
-        { name: "Lojas Participantes", route: "Home.index", to: "#lojas-participantes", external: false },
+        { name: "Lojas participantes", route: "Home.index", to: "#lojas-participantes", external: false },
         { name: "Regulamento", route: "Regulamento.index", external: false }
     ];
 
@@ -131,7 +131,7 @@ const DefaultLayout = ({ children }) => {
                 <div className="container max-w-medium">
                     <div className="flex items-center justify-between">
                         <div className="relative z-[1] flex items-center justify-between w-full h-20 lg:h-24 2xl:h-30">
-                            <h1 className="absolute top-8 z-[1] left-[6%]">
+                            <h1 className="absolute top-8 z-[1] md:z-[2] left-[6%]">
                                 <Link href={route('Home.index')} className="">
                                     <img src={logo} alt="Logo" className={`block max-w-30 lg:max-w-40 min-[1760px]:max-w-44 transition-all ${isVisible ? 'translate-y-0' : '-translate-y-1/2'}`} />
                                 </Link>
@@ -228,7 +228,7 @@ const DefaultLayout = ({ children }) => {
             </main>
 
             <footer className="relative bg-[#31231C]">
-                <div className="absolute top-0 right-0 max-md:scale-50 max-2xl:scale-75 origin-top-right overflow-hidden w-full -top-16 h-full">
+                <div className="absolute right-0 max-md:scale-50 max-2xl:scale-75 origin-top-right overflow-hidden w-full -top-16 h-full">
                     <ShortArrowPath className="absolute right-14 top-24 w-[417px] translate-x-1/2 rotate-[28deg]" fillClass="fill-secondary" delay={0.6} />
                 </div>
 
@@ -245,7 +245,7 @@ const DefaultLayout = ({ children }) => {
                                                 {item.name}
                                             </a>
                                         ) : (
-                                            <CustomLink href={route(item.route)} to={item.to} className="text-white text-sm font-medium leading-none transition-all opacity-70 hover:opacity-100">
+                                            <CustomLink href={route(item.route)} to={item.to ?? ''} className="text-white text-sm font-medium leading-none transition-all opacity-70 hover:opacity-100">
                                                 {item.name}
                                             </CustomLink>
                                         )}
@@ -253,7 +253,7 @@ const DefaultLayout = ({ children }) => {
                                 ))}
                                 
                                 <li>
-                                    <CustomLink href={route('Home.index')} to="#solicite-seu-projeto" className="text-white text-sm font-medium leading-none transition-all opacity-70 hover:opacity-100">Como Funciona</CustomLink>
+                                    <CustomLink href={route('Home.index')} to="#solicite-seu-projeto" className="text-white text-sm font-medium leading-none transition-all opacity-70 hover:opacity-100">Como funciona</CustomLink>
                                 </li>
                             </ul>
                         </nav>
@@ -301,10 +301,12 @@ const DefaultLayout = ({ children }) => {
                 <div className="bg-black bg-opacity-30 py-6 2xl:py-8">
                     <div className="container max-w-large">
                         <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-between">
-                            <Link href={route('Politicas.privacidade')} className="block text-white max-md:text-center max-md:mb-4 text-xs text-opacity-65 transition-all hover:text-opacity-100">Política de Privacidade</Link>
-                                <span className="text-white text-xs text-center opacity-70 mb-5 md:mb-0">
-                                    © {new Date().getFullYear()} Casa Brasileira | Todos os direitos reservados.
-                                </span>
+                            <a href="https://casabrasileiraplanejados.com.br/politica-de-privacidade" target="_blank" rel="noopener noreferrer" className="block text-white max-md:text-center max-md:mb-4 text-xs text-opacity-65 transition-all hover:text-opacity-100" aria-label="Política de Privacidade">
+                                Política de Privacidade
+                            </a>
+                            <span className="text-white text-xs text-center opacity-70 mb-5 md:mb-0">
+                                © {new Date().getFullYear()} Casa Brasileira | Todos os direitos reservados.
+                            </span>
 
                             <div className="flex items-center ml-auto max-md:mr-auto gap-4">
                                 <span className="text-white text-xs opacity-70">Desenvolvido por: </span>

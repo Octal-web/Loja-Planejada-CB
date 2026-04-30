@@ -29,7 +29,7 @@ const HomeAbout = () => {
     ];
 
     return (
-        <section className="py-14 sm:py-20 md:py-24 2xl:py-32">
+        <section className="py-14 sm:py-20 md:py-24 2xl:py-32" id="campanha">
             <div className="relative container max-w-medium">
 
                 <CornerField className="top-0 right-4 2xl:right-0 w-20 sm:w-24 xl:w-30 fill-secondary " />
@@ -65,7 +65,7 @@ const HomeAbout = () => {
                     </div>
 
                     <div className="flex max-sm:flex-col items-center gap-6 max-md:pb-5">
-                        <div className='md:ml-16 mt-6 md:ml-20 md:mt-0 xl:ml-0'>
+                        <div className='md:ml-16 mt-6 2xl:ml-20 md:mt-0 xl:ml-0'>
                             <p className="text-base lg:text-lg font-semibold tracking-tight">Projetos acima de</p>
                             <h3 className="font-secondary text-primary text-5xl lg:text-6xl 2xl:text-[74px] font-semibold uppercase tracking-tight">R$ 49.990</h3>
                             
@@ -75,7 +75,7 @@ const HomeAbout = () => {
                         <CustomLink
                             href={route('Home.index')}
                             to="#solicite-seu-projeto"
-                            className="flex md:ml-auto md:mr-16 w-fit gap-2 text-primary lg:text-sm xl:text-base 2xl:text-lg tracking-tight bg-white border-2 border-primary fill-primary rounded-full px-4 xl:px-10 py-3.5 font-semibold transition-all hover:bg-primary hover:border-primary hover:text-secondary hover:fill-secondary"
+                            className="flex md:ml-auto md:mr-16 w-fit gap-2 text-primary lg:text-sm xl:text-base 2xl:text-lg tracking-tight bg-white border-2 border-primary fill-primary rounded-full px-4 xl:px-6 py-3.5 font-semibold transition-all hover:bg-primary hover:border-primary hover:text-secondary hover:fill-secondary"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-4" viewBox="0 0 15.35 13.36">
                                 <path d="M8.67,13.36l-1.15-1.13,4.73-4.73H0v-1.64H12.25L7.52,1.15l1.15-1.15,6.68,6.68-6.68,6.68Z"/>

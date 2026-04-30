@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from '@inertiajs/react';
 
 const setCookie = (name, value, days) => {
     const expires = new Date(Date.now() + days * 864e5).toUTCString();
@@ -50,12 +49,12 @@ export const CookieModal = ({ acceptCookies, visible }) => {
                             <div>
                                 <p>
                                 Utilizamos cookies para oferecer uma melhor experiência, melhorar o desempenho, analisar como você interage em nosso site e personalizar conteúdo. Para mais informações acesse nossa{' '} 
-                                <Link href={route('Politicas.privacidade')} className="underline">política de privacidade</Link>.
+                                <a href="https://casabrasileiraplanejados.com.br/politica-de-privacidade" target="_blank" rel="noopener noreferrer" className="underline" aria-label="política de privacidade">política de privacidade</a>.
                                 </p>
                             </div>
                             <button
                                 onClick={handleAcceptCookies}
-                                className="block w-fit py-4 px-8 sm:px-11 ml-auto mt-5 bg-secondary border border-secondary rounded-full text-sm font-bold uppercase sm:tracking-wider transition-colors duration-300 hover:bg-primary hover:text-white hover:border-primary"
+                                className="block w-fit py-4 px-8 sm:px-11 ml-auto mt-5 bg-secondary border border-secondary rounded-full text-sm font-bold uppercase sm:tracking-wider transition-colors duration-300 hover:bg-primary hover:text-white hover:border-primary" aria-label="Aceitar todos os cookies"
                             >
                             Aceitar todos os cookies
                           </button>
