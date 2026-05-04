@@ -1,6 +1,6 @@
 {
-  "_CirclePath-BNpMcXtQ.js": {
-    "file": "assets/CirclePath-BNpMcXtQ.js",
+  "_CirclePath-CeATO07o.js": {
+    "file": "assets/CirclePath-CeATO07o.js",
     "name": "CirclePath",
     "imports": [
       "resources/js/app.jsx"
@@ -11,13 +11,13 @@
     ]
   },
   "resources/js/Pages/Home.jsx": {
-    "file": "assets/Home-ClUwTqMR.js",
+    "file": "assets/Home-C6MkVqrN.js",
     "name": "Home",
     "src": "resources/js/Pages/Home.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_CirclePath-BNpMcXtQ.js"
+      "_CirclePath-CeATO07o.js"
     ],
     "assets": [
       "assets/draw-detail-DCqFOQ8n.png",
@@ -35,17 +35,17 @@
     ]
   },
   "resources/js/Pages/Regulamento.jsx": {
-    "file": "assets/Regulamento-CeMO-EFZ.js",
+    "file": "assets/Regulamento-BaGKNHyN.js",
     "name": "Regulamento",
     "src": "resources/js/Pages/Regulamento.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_CirclePath-BNpMcXtQ.js"
+      "_CirclePath-CeATO07o.js"
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-DHdhnIdE.js",
+    "file": "assets/app-CV5pyTHt.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
