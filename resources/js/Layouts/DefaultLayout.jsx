@@ -71,32 +71,32 @@ const DefaultLayout = ({ children }) => {
         };
     }, [lastScrollY, isMenuOpen]);
 
-    // useEffect(() => {
-    //     const timer = setTimeout(() => {
-    //         if (notifyCookie || trackingEnabled) {
-    //             const script = document.createElement('script');
-    //             script.innerHTML = `
-    //                 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    //                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    //                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    //                 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    //                 })(window,document,'script','dataLayer','GTM-WCFTFZF');
-    //             `;
-    //             document.head.appendChild(script);
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (notifyCookie || trackingEnabled) {
+                const script = document.createElement('script');
+                script.innerHTML = `
+                    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                    })(window,document,'script','dataLayer','GTM-MJZSWHT');
+                `;
+                document.head.appendChild(script);
 
-    //             const meta = document.createElement('meta');
-    //             meta.name = 'facebook-domain-verification';
-    //             meta.content = 'agtpvwwr9a1d8qgyh9htrp013y0r0a';
-    //             document.head.appendChild(meta);
+                const meta = document.createElement('meta');
+                meta.name = 'facebook-domain-verification';
+                meta.content = 'd5uzppfozm4eujrlltl5d0yihf95p2';
+                document.head.appendChild(meta);
 
-    //             const noscript = document.createElement('noscript');
-    //             noscript.innerHTML = `
-    //                 <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCFTFZF" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    //             `;
-    //             document.body.appendChild(noscript);
-    //         }
-    //     }, 100);
-    // }, [notifyCookie, trackingEnabled]);
+                const noscript = document.createElement('noscript');
+                noscript.innerHTML = `
+                    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJZSWHT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+                `;
+                document.body.appendChild(noscript);
+            }
+        }, 100);
+    }, [notifyCookie, trackingEnabled]);
 
     const menuItems = [
         { name: "A campanha", route: "Home.index", to: "#campanha", external: false },
@@ -175,7 +175,7 @@ const DefaultLayout = ({ children }) => {
                                             </li>
                                         ))}
 
-                                        <li>
+                                        {/* <li>
                                             <CustomLink
                                                 href={route('Home.index')}
                                                 to="#solicite-seu-projeto"
@@ -186,7 +186,7 @@ const DefaultLayout = ({ children }) => {
                                                 </svg>
                                                 Solicite seu projeto
                                             </CustomLink>
-                                        </li>
+                                        </li> */}
                                     </ul>
                                 </nav>
                             </div>
