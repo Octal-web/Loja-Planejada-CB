@@ -1,10 +1,9 @@
-name: Tests
+name: Build and Deploy
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   ci:
@@ -43,20 +42,23 @@ jobs:
       - name: Install PHP Dependencies
         run: composer install --no-interaction --prefer-dist --optimize-autoloader
 
-      - name: Copy Environment File
-        run: cp .env.example .env
-
-      - name: Generate Application Key
-        run: php artisan key:generate
-
       - name: Build Assets
         run: npm run build
 
-      - name: Commit build assets
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      - name: Commit build assets to deploy branch
+        if: github.ref == 'refs/heads/main'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/build -f
-          git commit -m "chore: build assets [skip ci]" || echo "Nothing to commit"
-          git push
+          
+          rsync -a --exclude='.git' . /tmp/repo/
+          
+          git fetch origin gh-pages || true
+          git checkout -B gh-pages origin/gh-pages || git checkout --orphan gh-pages
+          
+          rsync -a /tmp/repo/. .
+          
+          git add -A
+          git add -f public/build
+          git commit -m "chore: deploy build [skip ci]" || echo "Nothing to commit"
+          git push origin gh-pages
