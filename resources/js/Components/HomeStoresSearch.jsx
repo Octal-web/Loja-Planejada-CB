@@ -84,7 +84,7 @@ const HomeStoresSearch = ({ setStores, isProcessing, setIsProcessing, hasSearche
     return (
         <form className="my-10" onSubmit={handleSubmit} data-lenis-prevent={true}>
             <div className="mb-5 min-[1440px]:mb-7 max-w-[690px] mx-auto px-4">
-                <div className="w-full flex justify-center">
+                <div className="relative w-full flex justify-center z-[2]">
                     <Select
                         options={selectOptions}
                         value={selectedOption}
