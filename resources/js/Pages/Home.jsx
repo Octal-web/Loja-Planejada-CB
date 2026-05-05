@@ -20,9 +20,9 @@ const Page = () => {
 
             <HomeAbout />
 
-            {/* <HomeStores />
+            <HomeStores />
 
-            <HomeContact /> */}
+            {/* <HomeContact /> */}
 
             <HomeRules text={previaRegulamento} />
         </DefaultLayout>
