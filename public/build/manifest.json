@@ -1,6 +1,6 @@
 {
-  "_CirclePath-CKu2srxm.js": {
-    "file": "assets/CirclePath-CKu2srxm.js",
+  "_CirclePath-BkxdhllR.js": {
+    "file": "assets/CirclePath-BkxdhllR.js",
     "name": "CirclePath",
     "imports": [
       "resources/js/app.jsx"
@@ -11,13 +11,13 @@
     ]
   },
   "resources/js/Pages/Home.jsx": {
-    "file": "assets/Home-DkshK4GR.js",
+    "file": "assets/Home-BAVNUM7_.js",
     "name": "Home",
     "src": "resources/js/Pages/Home.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_CirclePath-CKu2srxm.js"
+      "_CirclePath-BkxdhllR.js"
     ],
     "assets": [
       "assets/draw-detail-DCqFOQ8n.png",
@@ -35,17 +35,17 @@
     ]
   },
   "resources/js/Pages/Regulamento.jsx": {
-    "file": "assets/Regulamento-CAsfKSMm.js",
+    "file": "assets/Regulamento-CzSwBpMg.js",
     "name": "Regulamento",
     "src": "resources/js/Pages/Regulamento.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_CirclePath-CKu2srxm.js"
+      "_CirclePath-BkxdhllR.js"
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-14V-SPCg.js",
+    "file": "assets/app-D8nNYdaR.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
@@ -54,7 +54,7 @@
       "resources/js/Pages/Regulamento.jsx"
     ],
     "css": [
-      "assets/app-BWdXChGe.css"
+      "assets/app-CJNmPDN-.css"
     ]
   },
   "resources/js/content/display/campaign-poster.jpg": {
