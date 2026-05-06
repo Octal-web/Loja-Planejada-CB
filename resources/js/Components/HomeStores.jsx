@@ -37,9 +37,9 @@ const HomeStores = () => {
                     <div className="pt-10">
                         {stores.length > 0 ? (
                             <>
-                                <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 xl:gap-8 max-md:auto-rows-[1fr] pb-16">
+                                <ul className="flex flex-wrap justify-center gap-4 xl:gap-8 pb-16">
                                     {stores.map((loja) => (
-                                        <li key={loja.id} className={`bg-[#654433] flex flex-col px-8 pt-6 pb-4 text-white duration-100 ${isProcessing ? 'opacity-50' : 'opacity-100'}`}>
+                                        <li key={loja.id} className={`bg-[#654433] flex flex-col px-8 pt-6 pb-4 text-white duration-100 w-full sm:w-[calc(50%-8px)] md:w-[calc(25%-12px)] xl:w-[calc(25%-24px)] ${isProcessing ? 'opacity-50' : 'opacity-100'}`}>
                                             <p className="font-tertiary text-[15px] text-secondary uppercase mb-1" dangerouslySetInnerHTML={{ __html: loja.cidade }}></p>
 
                                             <h4 className="text-lg 2xl:text-[22px] font-bold leading-[1] tracking-tight mb-2">{loja.nome_fantasia}</h4>
@@ -48,7 +48,6 @@ const HomeStores = () => {
                                         </li>
                                     ))}
                                 </ul>
-                                
                             </>
                         ) : (
                             <p className={`text-white text-xl lg:text-2xl 2xl:text-[32px] text-center leading-tight tracking-tight max-w-[880px] mx-auto -mt-4 mb-14 transition-all duration-100 ${isProcessing ? 'opacity-50' : 'opacity-100'}`}>Oops.. Não foram encontradas lojas correspondentes à sua pesquisa</p>
