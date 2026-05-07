@@ -23,6 +23,7 @@ class PostClientRequest extends FormRequest
     {
         return [
             'nome' => 'required|string|min:3|max:255',
+            // 'telefone' => 'required|celular_com_ddd',
             'telefone' => 'required|celular_com_ddd',
             'email' => 'required|email:rfc,dns|max:255',
             'cep' => 'required|formato_cep',
