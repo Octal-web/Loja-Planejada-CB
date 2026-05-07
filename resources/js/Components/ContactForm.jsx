@@ -82,7 +82,6 @@ export const ContactForm = () => {
         post(route('Contato.enviar'), {
             preserveScroll: true,
             onSuccess: (page) => {
-                window.location.href = page.props.message.url;
             },
             onError: () => {
             }
@@ -103,10 +102,17 @@ export const ContactForm = () => {
             setTimeout(() => {
                 setData({
                     nome: '',
-                    email: '',
                     telefone: '',
-                    mensagem: '',
+                    cep: '',
+                    email: '',
+                    ambiente: [],
                     politica: false,
+                    origem: urlParams.get('utm_source') || '',
+                    campanha: urlParams.get('utm_campaign') || '',
+                    grupo: urlParams.get('utm_group') || '',
+                    anuncio: urlParams.get('utm_content') || '',
+                    posicao_formulario: 'Página Formulário',
+                    entrada: '',
                 });
 
                 setIsSuccessful(false);

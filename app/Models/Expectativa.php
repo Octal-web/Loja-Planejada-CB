@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Expectativa extends Model
 {
-    protected $table = 'expectativas';
+    protected $connection = 'unicasa';
+    
+    protected $table = 'expectativa_projetos';
     
     protected $fillable = [
         'cliente_id',
