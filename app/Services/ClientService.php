@@ -31,7 +31,7 @@ class ClientService
 
             $conversoes = $this->countConversions($cliente->email);
 
-            $lead = $this->createLead($cliente, $expectativa, $data, $conversoes, $data->entrada, $data->posicao_formulario);
+            $lead = $this->createLead($cliente, $expectativa, $data, $conversoes, $data['entrada'], $data['posicao_formulario']);
 
             return [
                 'cliente' => $cliente,
@@ -78,7 +78,7 @@ class ClientService
             'cidade' => $cepData['localidade'] ?? null,
             'cod_marca' => 'casabrasileira',
             'token' => md5(time() . rand(0, 9999)),
-            'canal_atendimento_id' => 3,
+            'canal_atendimento_id' => 44,
             'tipo_cadastro' => 'L',
             'status_cliente' => 'C',
             'data' => now(),
@@ -128,7 +128,7 @@ class ClientService
             ->where([
                 'email' => $email,
                 'cliente' => 'casabrasileira',
-                'projeto' => 'facaseuprojeto'
+                'projeto' => 'jogadaplanejada'
             ])
             ->count();
     }
@@ -145,7 +145,7 @@ class ClientService
             'cidade' => $cliente->cidade,
             'conversoes' => $conversoes,
             'cliente' => 'casabrasileira',
-            'projeto' => 'facaseuprojeto',
+            'projeto' => 'jogadaplanejada',
             'token' => $cliente->token,
             'expectativa_investimento' => $expectativa->expectativa_investimento,
             'entrada' => $horaEntrada ? Carbon::parse($horaEntrada) : null,

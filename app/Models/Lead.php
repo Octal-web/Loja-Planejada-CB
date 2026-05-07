@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lead extends Model
 {
+    protected $connection = '8poroito';
+    
     protected $table = 'leads';
     
     const CREATED_AT = 'criado';

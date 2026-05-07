@@ -22,7 +22,7 @@ const Page = () => {
 
             <HomeStores />
 
-            {/* <HomeContact /> */}
+            <HomeContact />
 
             <HomeRules text={previaRegulamento} />
         </DefaultLayout>

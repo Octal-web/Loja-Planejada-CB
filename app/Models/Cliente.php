@@ -9,6 +9,8 @@ class Cliente extends Model
 {
     use HasFactory;
     
+    protected $connection = 'unicasa';
+    
     protected $table = 'clientes';
 
     protected $fillable = [

@@ -25,8 +25,7 @@ class ContatoController extends Controller
         if($request->post()){
             $data = $request->validated();
         
-            $contato = $this->clientService->create($data);
-
+            $this->clientService->create($data);
             return back()->with('message', [
                 'type' => 'success',
                 'msg' => 'Contato enviado com sucesso!',
