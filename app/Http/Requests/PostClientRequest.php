@@ -26,7 +26,8 @@ class PostClientRequest extends FormRequest
             // 'telefone' => 'required|celular_com_ddd',
             'telefone' => 'required',
             'email' => 'required|email:rfc,dns|max:255',
-            'cep' => 'required|formato_cep',
+            // 'cep' => 'required|formato_cep',
+            'cep' => 'required',
 
             'ambiente' => 'required|array|min:1',
 
