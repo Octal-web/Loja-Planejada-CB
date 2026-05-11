@@ -60,3 +60,7 @@ form .contact-select__multi-value__label {
 form .contact-select__indicator svg {
     @apply fill-white;
 }
+
+.rdstation-popup-position-bottom_right {
+    @apply !hidden;
+}
